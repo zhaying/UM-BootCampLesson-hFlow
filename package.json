@@ -49,7 +49,8 @@
     "webpack-hot-middleware": "^2.22.2"
   },
   "scripts": {
-    "start": "npm-run-all --parallel open:client lift",
+    "start": "npm run lift",
+    "start:dev": "npm-run-all --parallel open:client lift",
     "start:debug": "npm-run-all --parallel open:client debug",
     "open:client": "babel-node tools/dev.js",
     "sails": "node app.js",
