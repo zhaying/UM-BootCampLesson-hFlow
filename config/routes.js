@@ -14,7 +14,7 @@ module.exports.routes = {
   //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
   //  ║║║║╣ ╠╩╗╠═╝╠═╣║ ╦║╣ ╚═╗
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
-  //'GET /':                   { action: 'view-homepage-or-redirect' },
+  'GET /':                   { view:   'pages/homepage' },
   'GET /*' :                   { controller: 'IndexController',
                                      action: 'render',
                                      skipAssets: true },
