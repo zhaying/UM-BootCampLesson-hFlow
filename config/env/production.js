@@ -322,7 +322,7 @@ module.exports = {
     * (https://sailsjs.com/config/http)                                        *
     *                                                                          *
     ***************************************************************************/
-    // trustProxy: true,
+    trustProxy: true,
 
   },
 
@@ -371,7 +371,7 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'https://um-hflow.herokuapp.com/',
+    baseUrl: 'https://um-hflow.herokuapp.com',
     internalEmailAddress: 'support@colada.io',
 
     // mailgunDomain: 'mg.example.com',
