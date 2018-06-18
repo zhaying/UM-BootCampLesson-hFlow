@@ -28,10 +28,10 @@ module.exports.http = {
     * (This Sails app's routes are handled by the "router" middleware below.)  *
     *                                                                          *
     ***************************************************************************/
-    order: [
-      'passportInit',
-      'passportSession',
-    ],
+    // order: [
+    //   'passportInit',
+    //   'passportSession',
+    // ],
     // order: [
     //   'cookieParser',
     //   'session',
@@ -59,14 +59,14 @@ module.exports.http = {
     // })(),
 
     //hFlow Addming passport
-    passportInit    : (function (){
-      return require('passport').initialize();
-    })(),
-
-    passportSession : (function (){
-      return require('passport').session();
-    })()
-
-  },
+  //   passportInit    : (function (){
+  //     return require('passport').initialize();
+  //   })(),
+  //
+  //   passportSession : (function (){
+  //     return require('passport').session();
+  //   })()
+  //
+   },
 
 };
