@@ -5,8 +5,6 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-module.exports = {
-
-  render: (req,res) => res.view('pages/homepage')
-
-};
+ module.exports = {
+   render: (req, res) => res.view('pages/homepage')
+ };

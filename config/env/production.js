@@ -221,7 +221,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cookie: {
-      secure: true,
+      // secure: true,
       maxAge: 24 * 60 * 60 * 1000,  // 24 hours
     },
 
@@ -250,10 +250,10 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    onlyAllowOrigins: [
-      'https://um-hflow.herokuapp.com',
-      'https://hflow.colada.io',
-    ],
+    // onlyAllowOrigins: [
+    //   'https://example.com',
+    //   'https://staging.example.com',
+    // ],
 
 
     /***************************************************************************
@@ -322,7 +322,7 @@ module.exports = {
     * (https://sailsjs.com/config/http)                                        *
     *                                                                          *
     ***************************************************************************/
-    trustProxy: true,
+    // trustProxy: true,
 
   },
 
@@ -371,8 +371,8 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'https://um-hflow.herokuapp.com',
-    internalEmailAddress: 'support@colada.io',
+    baseUrl: 'https://example.com',
+    internalEmailAddress: 'support@example.com',
 
     // mailgunDomain: 'mg.example.com',
     // mailgunSecret: 'key-prod_fake_bd32301385130a0bafe030c',

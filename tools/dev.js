@@ -32,7 +32,7 @@ const server = new WebpackDevServer(compiler, serverConfig);
 server.use(require('webpack-hot-middleware')(compiler));
 
 const host = 'localhost';
-const port = 8081;
+const port = 8080;
 
 server.listen(port, host, (err) => {
   if (err) {
