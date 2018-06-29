@@ -57,6 +57,6 @@
   "author": "anonymous node/sails user",
   "license": "",
   "engines": {
-    "node": ">=9.8"
+    "node": "9.8.0"
   }
 }
