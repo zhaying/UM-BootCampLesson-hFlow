@@ -45,7 +45,8 @@
     "build:dev": "webpack --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
     "clean": "rimraf .tmp && mkdirp .tmp/public",
-    "lift": "sails lift",
+    "lift:dev": "sails lift",
+    "lift:prod": "node app.js",
     "debug": "node --inspect app.js",
     "heroku-postbuild": "npm-run-all --parallel build lift"
   },
