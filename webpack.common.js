@@ -28,7 +28,8 @@ module.exports = {
         test: /\.css$/
       }
     ]
-  }
+  },
+  optimization: { splitChunks: {chunks: 'all'} }
 };
 // module.exports = {
 //    entry: {
