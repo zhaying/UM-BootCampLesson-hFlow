@@ -1,18 +1,14 @@
-# project
+# hFlow
 
-a [Sails v1](https://sailsjs.com) application
-
-
-### Links
-
-+ [Get started](https://sailsjs.com/get-started)
-+ [Sails framework documentation](https://sailsjs.com/documentation)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+A workflow application
 
 
+### Getting started
+
+```
+npm install
+npm run start:dev
+```
 ### Version info
 
 This app was originally generated on Thu Jun 28 2018 22:58:32 GMT-0400 (Eastern Daylight Time) using Sails v1.0.0.
