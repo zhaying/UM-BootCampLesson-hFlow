@@ -1,9 +1,10 @@
 import React from 'react';
-import { Jumbotron, Button } from 'reactstrap';
+// import { Jumbotron} from 'reactstrap';
+import Button from '@material-ui/core/Button';
 
 const Home = () => (
     <div>
-      <Jumbotron>
+      <div>
         <h2>Orchestrate your team to move towards order and away from chaos...</h2>
         <br />
         <br />
@@ -12,9 +13,9 @@ const Home = () => (
         </p>
         <br />
         <p className="lead">
-          <Button outline color="secondary">FIND OUT NOW</Button>
+          <Button variant="contained" color="primary">FIND OUT NOW</Button>
         </p>
-      </Jumbotron>
+      </div>
     </div>
 );
 

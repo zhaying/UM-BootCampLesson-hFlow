@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NavBar from '../views/navbar/Navbar';
+import MenuAppBar from '../views/navbar/Navbar';
 import Home from '../views/pages/Home';
 import Products from '../views/pages/Products';
 import Customers from '../views/pages/Customers';
@@ -14,7 +14,7 @@ export default function LandingPage() {
   return (
     <Router>
       <div>
-        <NavBar />
+        <MenuAppBar />
         <main>
           <Route exact path="/" component={Home} />
           <Route path="/products" component={Products} />
