@@ -17,7 +17,7 @@ const styles = theme => ({
         flexWrap: 'wrap',
     },
     textField: {
-        marginLeft: theme.spacing.unit,
+        marginLeft: theme.spacing.unit * 12,
         marginRight: theme.spacing.unit,
         width: 200,
     },
@@ -28,54 +28,60 @@ const styles = theme => ({
         padding: theme.spacing.unit * 2,
         textAlign: 'center',
         color: theme.palette.text.secondary,
+        width: 400
     },
     topMargin: {
-        marginTop: '80px'
+        margin: '10% 33% 33% 33%',
+    },
+    button: {
+        margin: '25px',
     }
 });
 
 class TextFields extends React.Component {
-  state = {
-    name: 'Cat in the Hat',
-    age: ''
-  };
+//   state = {
+//     email: 'Email',
+//     age: ''
+//   };
 
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
-  };
+//   handleChange = name => event => {
+//     this.setState({
+//       [email]: event.target.value,
+//     });
+//   };
 
   render() {
     const { classes } = this.props;
 
     return (
-      <form className={classes.container} noValidate autoComplete="off">
-        <TextField
-          id="name"
-          label="Name"
-          className={classes.textField}
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-          margin="normal"
-        />
-        <TextField
-          required
-          id="required"
-          label="Required"
-          defaultValue="Hello World"
-          className={classes.textField}
-          margin="normal"
-        />
-        <TextField
-          id="password-input"
-          label="Password"
-          className={classes.textField}
-          type="password"
-          autoComplete="current-password"
-          margin="normal"
-        />
-      </form>
+        <div className={classes.root}>
+            <Grid container spacing={24} className={classes.topMargin}>
+                <Grid item alignItems={'center'} sm={6} xs={12}>
+                    <Paper className={classes.paper}>
+                        <form className={classes.container} noValidate autoComplete="off">
+                            <TextField
+                                required
+                                id="required"
+                                label="Email"
+                                defaultValue=""
+                                className={classes.textField}
+                                margin="normal"
+                            />
+                            <TextField
+                                required
+                                id="required"
+                                label="Password"
+                                defaultValue=""
+                                type="password"
+                                className={classes.textField}
+                                margin="normal"
+                            />
+                        </form>
+                        <Button variant="contained" color="primary" className={classes.button}>Login</Button>
+                    </Paper>
+                </Grid>
+            </Grid>
+        </div>
     );
   }
 }
