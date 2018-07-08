@@ -7,7 +7,8 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 //import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import axios from 'axios';
+
+
 
 const styles = theme => ({
     root: {
@@ -40,43 +41,23 @@ const styles = theme => ({
 });
 
 class TextFields extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
-    this.change = this.change.bind(this);
-  }
+
   change(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  }
+    this.props.onUpdate(e);
+  };
+
   submit(e) {
-    axios.post('/authenticate', {
-      email: this.state.email,
-      password: this.state.password
-    })
-    .then( res => {
-      console.log(res.data);
-      localStorage.setItem('hflow-jwt',res.data)
-    })
-    .catch(err => console.log("err=",err));
-  }
-
-
-//   handleChange = name => event => {
-//     this.setState({
-//       [email]: event.target.value,
-//     });
-//   };
+    this.props.onSubmitted(e);
+  };
+  sendOnKey(e) {
+      this.props.onKeyPressed(e.key);
+  };
 
   render() {
     const { classes } = this.props;
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} onKeyPress={ e => this.sendOnKey(e)}>
             <Grid container alignItems={'center'} spacing={24} className={classes.topMargin}>
                 <Grid item sm={6} xs={12}>
                     <Paper className={classes.paper}>
@@ -90,7 +71,7 @@ class TextFields extends React.Component {
                                 className={classes.textField}
                                 margin="normal"
                                 onChange={e => this.change(e)}
-                                value={this.state.email}
+                                value={this.props.email}
                             />
                             <TextField
                                 required
@@ -101,7 +82,7 @@ class TextFields extends React.Component {
                                 className={classes.textField}
                                 margin="normal"
                                 onChange={e => this.change(e)}
-                                value={this.state.password}
+                                value={this.props.password}
                             />
                         </form>
                         <Button variant="contained" color="primary" className={classes.button} onClick={e => this.submit(e)}>Login</Button>
