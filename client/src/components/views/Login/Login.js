@@ -49,8 +49,6 @@ class TextFields extends React.Component {
     this.change = this.change.bind(this);
   }
   change(e) {
-    console.log("e.name=",e.target.name);
-    console.log("e.value=",e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });

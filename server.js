@@ -51,7 +51,8 @@ const strategy = new JwtStrategy(opts, (payload, next)=>{
 
 passport.use(strategy);
 app.use(passport.initialize());
-
+// Set static files
+app.use(express.static(__dirname + '/client/public'));
 // Parse the body
 app.use(parser.urlencoded({
   extended: false
@@ -61,10 +62,15 @@ app.use(parser.urlencoded({
 app.use(parser.json());
 
 // Homepage of api
-app.get('/', (req, res) => {
-  res.send('Hello World');
+// app.get('/', (req, res) => {
+//   res.send('Hello World');
+// });
+app.get('*', function (req, res) {
+  // load the front-end (react / angular / etc handles page changes)
+  //res.sendFile(path.join(__dirname, '/public/index.html'));
+  res.status(200)
+   .sendFile(path.join(__dirname, './client/build/index.html'));
 });
-
 // Register a new user
 app.post('/register', (req, res) => {
   //Variables for easier readability
