@@ -8,6 +8,7 @@ import UseCases from '../views/pages/UseCases';
 import Support from '../views/pages/Support';
 import ContactUs from '../views/pages/ContactUs';
 import Login from '../views/pages/Login';
+import Resume from '../views/pages/Resume';
 
 
 export default function LandingPage() {
@@ -23,6 +24,7 @@ export default function LandingPage() {
           <Route path="/support" component={Support} />
           <Route path="/contact-us" component={ContactUs} />
           <Route path="/login" component={Login} />
+          <Route path="/resume" component={Resume} />
         </main>
       </div>
     </Router>
