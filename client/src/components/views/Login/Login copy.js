@@ -1,10 +1,5 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import { withStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
-// import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
-// import Grid from '@material-ui/core/Grid';
+
+
 
 // const styles = theme => ({
 //   root: {
@@ -59,22 +54,3 @@
 // }
 
 // export default withStyles(styles)(Login);
-
-
-import React from 'react';
-// import { Jumbotron, Button } from 'reactstrap';
-//import { Button } from '@material-ui/core/Button';
-import Login from '../Login/Login';
-const LoginPage = () => (
-    <div>
-      {/* <Jumbotron>
-        <h1 className="display-3">Login</h1>
-        <p className="lead">
-          <Button variant="contained" color="primary">Login</Button>
-        </p>
-      </Jumbotron> */}
-      <Login />
-    </div>
-);
-
-export default LoginPage;

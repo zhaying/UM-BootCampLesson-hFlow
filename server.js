@@ -87,10 +87,13 @@ app.post('/register', (req, res) => {
 
 // Verify user and send JWT
 app.post('/authenticate',(req, res)=>{
+  console.log("In /authenticate");
+  console.log("body data",req.body);
   let userEmail    = req.body.email,
       userPassword = req.body.password;
   // Check the required fields have been sent
   if(!userEmail || !userPassword){
+    console.log("In /authenticate 401");
     return res.status(401).json({data: {error: 'missing fields'}});
   }
 
