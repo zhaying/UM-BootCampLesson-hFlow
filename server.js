@@ -4,6 +4,7 @@ dotenv.config();
 
 //Import modules for use
 const express      = require('express'),
+      path         = require('path'),
       parser       = require('body-parser'),
       passport     = require('passport'),
       passportJWT  = require('passport-jwt'),
