@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button } from 'reactstrap';
+import { Jumbotron} from 'reactstrap';
 
 const Customers = () => (
     <div>
@@ -12,7 +12,7 @@ const Customers = () => (
         - Wesley Miner, Head of Operations, The Palms Hotel
         </p>
         <p className="lead">
-          <a href="#">// WATCH THE CUSTOMER VIDEO //</a>
+          <a href="/Customers" aria-hidden content="stuff">Customers</a>{/* // WATCH THE CUSTOMER VIDEO // */}
         </p>
       </Jumbotron>
     </div>
