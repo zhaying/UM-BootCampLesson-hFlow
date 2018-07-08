@@ -52,7 +52,7 @@ const strategy = new JwtStrategy(opts, (payload, next)=>{
 passport.use(strategy);
 app.use(passport.initialize());
 // Set static files
-app.use(express.static(__dirname + '/client/public'));
+app.use(express.static(__dirname + '/client/build'));
 // Parse the body
 app.use(parser.urlencoded({
   extended: false
@@ -69,7 +69,7 @@ app.get('*', function (req, res) {
   // load the front-end (react / angular / etc handles page changes)
   //res.sendFile(path.join(__dirname, '/public/index.html'));
   res.status(200)
-   .sendFile(path.join(__dirname, './client/build/index.html'));
+   .sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 // Register a new user
 app.post('/register', (req, res) => {
