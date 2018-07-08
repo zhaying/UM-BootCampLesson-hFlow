@@ -147,8 +147,15 @@ app.post('/api/authenticate',(req, res)=>{
   });
 });
 
+// Authorize user route
+app.get('/api/userAuthorization', passport.authenticate('jwt', {session:false}), (req, res) => {
+  console.log("console.log.req.headers=",req.headers);
+  console.log("console.log.req.user=",req.user);
+  res.send(req.user);
+});
+
 // Test protected Route
-app.get('/protected', passport.authenticate('jwt', {session: false }), (req, res) => {
+app.get('/api/protected', passport.authenticate('jwt', {session: false }), (req, res) => {
     res.send('revealed secret');
 });
 
