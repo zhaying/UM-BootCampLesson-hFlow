@@ -4,6 +4,7 @@ dotenv.config();
 
 //Import modules for use
 const express      = require('express'),
+      graphqlHTTP  = require('express-graphql');
       path         = require('path'),
       parser       = require('body-parser'),
       passport     = require('passport'),
@@ -14,6 +15,8 @@ const express      = require('express'),
       knex         = require('knex'),
       bookshelf    = require('bookshelf'),
       hashPassword = require('bookshelf-secure-password');
+//graphql GraphQLSchema
+const schema = require('./schema/schema');
 
 // Connect to DB
 const knexDB = knex({ client: 'mysql', connection: {
@@ -53,7 +56,8 @@ const strategy = new JwtStrategy(opts, (payload, next)=>{
 passport.use(strategy);
 app.use(passport.initialize());
 // Set static files
-app.use(express.static(__dirname + '/client/build'));
+let servingFolder = process.env.servingFolder || '/client/public';
+app.use(express.static(__dirname + servingFolder));
 // Parse the body
 app.use(parser.urlencoded({
   extended: false
@@ -61,19 +65,45 @@ app.use(parser.urlencoded({
 );
 
 app.use(parser.json());
-
+// graphql requests
+app.use('/api/graphql',graphqlHTTP({
+  schema:schema,
+  graphiql:true
+}));
 // Homepage of api
 // app.get('/', (req, res) => {
 //   res.send('Hello World');
 // });
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
   // load the front-end (react / angular / etc handles page changes)
   //res.sendFile(path.join(__dirname, '/public/index.html'));
-  res.status(200)
-   .sendFile(path.join(__dirname, '/client/build/index.html'));
+  let theENV = process.env.NODE_ENV || 'development';
+  if(theENV === 'development'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/public/index.html'));
+  }
+  if(theENV === 'production'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/build/index.html'));
+  }
+
 });
+app.get('/login', function (req, res) {
+  // load the front-end (react / angular / etc handles page changes)
+  //res.sendFile(path.join(__dirname, '/public/index.html'));
+  let theENV = process.env.NODE_ENV || 'development';
+  if(theENV === 'development'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/public/index.html'));
+  }
+  if(theENV === 'production'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/build/index.html'));
+  }
+});
+
 // Register a new user
-app.post('/register', (req, res) => {
+app.post('/api/register', (req, res) => {
   //Variables for easier readability
   let userEmail    = req.body.email,
       userPassword = req.body.password;
@@ -93,7 +123,7 @@ app.post('/register', (req, res) => {
 });
 
 // Verify user and send JWT
-app.post('/authenticate',(req, res)=>{
+app.post('/api/authenticate',(req, res)=>{
   console.log("In /authenticate");
   console.log("body data",req.body);
   let userEmail    = req.body.email,
@@ -126,4 +156,4 @@ app.get('/protected', passport.authenticate('jwt', {session: false }), (req, res
 const PORT = process.env.PORT || 5000;
 
 // Start server on specific PORT
-app.listen(PORT);
+app.listen(PORT, ()=>console.log('now listening on PORT:'+PORT));

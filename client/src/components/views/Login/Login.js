@@ -54,7 +54,7 @@ class TextFields extends React.Component {
     });
   }
   submit(e) {
-    axios.post('/authenticate', {
+    axios.post('/api/authenticate', {
       email: this.state.email,
       password: this.state.password
     })
