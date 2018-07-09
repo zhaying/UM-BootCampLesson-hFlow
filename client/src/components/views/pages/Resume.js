@@ -3,10 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-//import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import TabContainer from '../resume/tabContainer/TabContainer';
+import TabsWrappedLabel from '../resume/tabContainer/TabContainer';
 
 const styles = theme => ({
   root: {
@@ -30,7 +30,12 @@ function Resume(props) {
     <div className={classes.root}>
       <Grid container spacing={24} className={classes.topMargin}>
         <Grid item xs={12} sm={8}>
-          <TabContainer />
+            <Typography variant="title" color="inherit">
+                <h1>
+                    Month
+                </h1>
+            </Typography>
+            <TabsWrappedLabel />
         </Grid>
       </Grid>
     </div>
