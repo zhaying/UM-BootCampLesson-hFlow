@@ -1,11 +1,11 @@
 import React from 'react';
-// import { Jumbotron} from 'reactstrap';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-//import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import ButtonAppBar from '../navbar/Navbar';
 
 const styles = theme => ({
   root: {
@@ -26,6 +26,7 @@ function Home(props) {
 
   return(
     <div className={classes.root}>
+    <ButtonAppBar />
       <Grid container spacing={24} className={classes.topMargin}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
@@ -42,9 +43,9 @@ function Home(props) {
     </div>
   );
 
-  // Home.propTypes = {
-  //   classes: PropTypes.object.isRequired,
-  // };
+  Home.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
 
 }
 
