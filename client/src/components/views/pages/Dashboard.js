@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -51,3 +52,15 @@ class Dashboard extends React.Component {
 }
 
 export default withRouter( withStyles(styles)(Dashboard) );
+=======
+import DashAppBar from '../navbarDash/NavbarDash';
+
+
+const DashboardPage = () => (
+    <div>
+      <DashAppBar />
+    </div>
+);
+
+export default DashboardPage;
+>>>>>>> fe38b3acd31a130a07753798a8544effbe9ab29d
