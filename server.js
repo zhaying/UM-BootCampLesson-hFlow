@@ -76,8 +76,7 @@ app.use('/api/graphql',graphqlHTTP({
 // });
 app.get('/', function (req, res) {
   console.log("In the root /");
-  // load the front-end (react / angular / etc handles page changes)
-  //res.sendFile(path.join(__dirname, '/public/index.html'));
+  // Load frontend
   let theENV = process.env.NODE_ENV || 'development';
   if(theENV === 'development'){
     res.status(200)
@@ -91,8 +90,7 @@ app.get('/', function (req, res) {
 });
 app.get('/login', function (req, res) {
   console.log("In /login");
-  // load the front-end (react / angular / etc handles page changes)
-  //res.sendFile(path.join(__dirname, '/public/index.html'));
+  // Load frontend
   let theENV = process.env.NODE_ENV || 'development';
   if(theENV === 'development'){
     res.status(200)
