@@ -132,8 +132,4 @@ DashAppBar.propTypes = {
   theme: PropTypes.object.isRequired,
 };
 
-<<<<<<< HEAD
 export default withStyles(styles, { withTheme: true })(DashAppBar);
-=======
-export default withStyles(styles, { withTheme: true })(DashAppBar);
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
