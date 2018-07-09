@@ -13,7 +13,7 @@ const styles = theme => ({
   },
   paper: {
     padding: theme.spacing.unit * 2,
-    textAlign: 'center',
+    // textAlign: 'center',
     color: theme.palette.text.secondary,
   },
   topMargin: {
@@ -29,12 +29,17 @@ function Resume(props) {
     <div className={classes.root}>
       <Grid container spacing={24} className={classes.topMargin}>
         <Grid item xs={12} sm={8}>
+        <Paper className={classes.paper}>
             <Typography variant="title" color="inherit">
                 <h1>
                     Month
                 </h1>
             </Typography>
+            <Typography className={classes.title} color="textSecondary">
+            Meeting/Convention Resumes
+            </Typography>
             <TabsWrappedLabel />
+          </Paper>
         </Grid>
       </Grid>
     </div>
