@@ -5,6 +5,9 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../speedDial/SpeedDial';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 
 const styles = theme => ({
@@ -42,29 +45,29 @@ class Attendance extends React.Component {
             <Grid container alignItems={'center'} spacing={24}>
                 <Grid item xs={12}>
                     <h1>Attendance</h1>
-                    <ul>
-                        <li>
-                            People:
-                        </li>
-                        <li>
-                            %Male:
-                        </li>
-                        <li>
-                            %Female:
-                        </li>
-                        <li>
-                            %Spousal Attendance:
-                        </li>
-                        <li>
-                            Peak Night Rooms Committed:
-                        </li>
-                        <li>
-                            Peak Night Total Rooms Reserved:
-                        </li>
-                        <li>
-                            %Reserved/Committed:
-                        </li>
-                    </ul>
+                        <List component="nav">
+                            <ListItem>
+                                <ListItemText inset primary="People:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText inset primary="%Male:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText inset primary="%Female:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText inset primary="%Spousal Attendance:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText inset primary="Peak Night Rooms Committed:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText inset primary="Peak Night Total Rooms Reserved:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText inset primary="%Reserved/Committed:" />
+                            </ListItem>
+                        </List>
                     <OpenIconSpeedDial />
                 </Grid>
             </Grid>

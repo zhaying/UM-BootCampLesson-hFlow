@@ -9,6 +9,8 @@ import Support from '../views/pages/Support';
 import ContactUs from '../views/pages/ContactUs';
 import Login from '../views/pages/Login';
 import Resume from '../views/pages/Resume';
+import DashboardPage from '../views/pages/Dashboard';
+
 
 
 export default function LandingPage() {
@@ -25,6 +27,7 @@ export default function LandingPage() {
           <Route path="/contact-us" component={ContactUs} />
           <Route path="/login" component={Login} />
           <Route path="/resume" component={Resume} />
+          <Route path="/dash" component={DashboardPage} />
         </main>
       </div>
     </Router>
