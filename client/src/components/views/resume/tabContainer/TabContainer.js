@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Overview from '../overview/Overview';
+import Attendance from '../attendance/Attendance';
 
 function TabContainer(props) {
   return (
@@ -22,7 +23,7 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#FAFAFA",
   },
 });
 
@@ -43,16 +44,23 @@ class TabsWrappedLabel extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Tabs value={value} onChange={this.handleChange}>
-            <Tab value="one" label="New Arrivals in the Longest Text of Nonfiction" />
-            <Tab value="two" label="Item Two" />
-            <Tab value="three" label="Item Three" />
+            <Tab value="one" label="Hilton" />
+            <Tab value="two" label="Global Tech Women's Tech Conference" />
+            <Tab value="three" label="Marriot" />
           </Tabs>
         </AppBar>
         {value === 'one' && <TabContainer>
           <Overview />
+          <Attendance />
         </TabContainer>}
-        {value === 'two' && <TabContainer>Item Two</TabContainer>}
-        {value === 'three' && <TabContainer>Item Three</TabContainer>}
+        {value === 'two' && <TabContainer>
+          <Overview />
+          <Attendance />
+        </TabContainer>}
+        {value === 'three' && <TabContainer>
+          <Overview />
+          <Attendance />
+        </TabContainer>}
       </div>
     );
   }

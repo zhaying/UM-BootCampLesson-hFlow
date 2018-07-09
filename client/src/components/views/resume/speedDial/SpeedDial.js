@@ -15,7 +15,7 @@ import EditIcon from '@material-ui/icons/Edit';
 
 const styles = theme => ({
   root: {
-    height: 380,
+    // height: 380,
   },
   speedDial: {
     // position: 'absolute',
@@ -26,7 +26,7 @@ const styles = theme => ({
 
 const actions = [
 //   { icon: <FileCopyIcon />, name: 'Copy' },
-  { icon: <SaveIcon />, name: 'Save' },
+//   { icon: <SaveIcon />, name: 'Save' },
 //   { icon: <PrintIcon />, name: 'Print' },
 //   { icon: <ShareIcon />, name: 'Share' },
 //   { icon: <DeleteIcon />, name: 'Delete' },
