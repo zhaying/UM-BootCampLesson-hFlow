@@ -13,6 +13,11 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import LocationCityIcon from '@material-ui/icons/LocationCity';
+import GroupIcon from '@material-ui/icons/Group';
+import InsertInvitationIcon from '@material-ui/icons/InsertInvitation';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 
 const styles = theme => ({
@@ -39,12 +44,8 @@ const styles = theme => ({
     }
 });
 
-class Executives extends React.Component {
-<<<<<<< HEAD
-
-=======
+class Info extends React.Component {
   
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
 
   render() {
     const { classes } = this.props;
@@ -53,43 +54,67 @@ class Executives extends React.Component {
         <div className={classes.root}>
             <Grid container alignItems={'center'} spacing={24}>
                 <Grid item xs={12}>
-                    <h1>Executives</h1>
+                    <h1>Info</h1>
+                        <List component="nav">
+                            <ListItem>
+                                <ListItemIcon>
+                                    <LocationCityIcon />
+                                </ListItemIcon>
+                                <ListItemText inset primary="Organization Name:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <GroupIcon />
+                                </ListItemIcon>
+                                <ListItemText inset primary="Event Name:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <InsertInvitationIcon />
+                                </ListItemIcon>
+                                <ListItemText inset primary="Dates:" />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <DescriptionIcon />
+                                </ListItemIcon>
+                                <ListItemText inset primary="Resume Type:" />
+                            </ListItem>
+                        </List>
                         <Table className={classes.table}>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Name</TableCell>
                                     <TableCell>Title</TableCell>
-                                    <TableCell>Dates</TableCell>
-                                    <TableCell>Amenities</TableCell>
-                                    <TableCell>Preferences</TableCell>
+                                    <TableCell>Name</TableCell>
+                                    <TableCell>Mobile</TableCell>
+                                    <TableCell>Email</TableCell>
                                 </TableRow>
                             </TableHead>
                         <TableBody>
                             <TableRow>
-                                <TableCell></TableCell>
+                                <TableCell>
+                                Convention Services Representative:
+                                </TableCell>
                                 <TableCell ></TableCell>
-                                <TableCell></TableCell>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell></TableCell>
+                                <TableCell>
+                                Catering Representative:
+                                </TableCell>
                                 <TableCell ></TableCell>
-                                <TableCell></TableCell>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell></TableCell>
+                                <TableCell>
+                                Sales Representative:
+                                </TableCell>
                                 <TableCell ></TableCell>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
-                                <TableCell></TableCell>
-<<<<<<< HEAD
-                            </TableRow>
-=======
                             </TableRow>  
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
                         </TableBody>
                     </Table>
                     <OpenIconSpeedDial />
@@ -100,12 +125,8 @@ class Executives extends React.Component {
   }
 }
 
-Executives.propTypes = {
+Info.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-<<<<<<< HEAD
-export default withStyles(styles)(Executives);
-=======
-export default withStyles(styles)(Executives);
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
+export default withStyles(styles)(Info);

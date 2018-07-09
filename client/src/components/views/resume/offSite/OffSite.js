@@ -39,12 +39,8 @@ const styles = theme => ({
     }
 });
 
-class Executives extends React.Component {
-<<<<<<< HEAD
-
-=======
+class OffSiteActivities extends React.Component {
   
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
 
   render() {
     const { classes } = this.props;
@@ -53,15 +49,15 @@ class Executives extends React.Component {
         <div className={classes.root}>
             <Grid container alignItems={'center'} spacing={24}>
                 <Grid item xs={12}>
-                    <h1>Executives</h1>
+                    <h1>Off Site Activities</h1>
                         <Table className={classes.table}>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Name</TableCell>
-                                    <TableCell>Title</TableCell>
-                                    <TableCell>Dates</TableCell>
-                                    <TableCell>Amenities</TableCell>
-                                    <TableCell>Preferences</TableCell>
+                                    <TableCell>Day and Date</TableCell>
+                                    <TableCell>Time</TableCell>
+                                    <TableCell>Event/Number of People</TableCell>
+                                    <TableCell>Location</TableCell>
+                                    <TableCell>Transportation/Departure Point</TableCell>
                                 </TableRow>
                             </TableHead>
                         <TableBody>
@@ -85,11 +81,7 @@ class Executives extends React.Component {
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
-<<<<<<< HEAD
-                            </TableRow>
-=======
                             </TableRow>  
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
                         </TableBody>
                     </Table>
                     <OpenIconSpeedDial />
@@ -100,12 +92,8 @@ class Executives extends React.Component {
   }
 }
 
-Executives.propTypes = {
+OffSiteActivities.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-<<<<<<< HEAD
-export default withStyles(styles)(Executives);
-=======
-export default withStyles(styles)(Executives);
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
+export default withStyles(styles)(OffSiteActivities);
