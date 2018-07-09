@@ -76,8 +76,7 @@ app.use('/api/graphql',graphqlHTTP({
 // });
 app.get('/', function (req, res) {
   console.log("In the root /");
-  // load the front-end (react / angular / etc handles page changes)
-  //res.sendFile(path.join(__dirname, '/public/index.html'));
+  // Load frontend
   let theENV = process.env.NODE_ENV || 'development';
   if(theENV === 'development'){
     res.status(200)
@@ -91,8 +90,7 @@ app.get('/', function (req, res) {
 });
 app.get('/login', function (req, res) {
   console.log("In /login");
-  // load the front-end (react / angular / etc handles page changes)
-  //res.sendFile(path.join(__dirname, '/public/index.html'));
+  // Load frontend
   let theENV = process.env.NODE_ENV || 'development';
   if(theENV === 'development'){
     res.status(200)
@@ -168,4 +166,4 @@ app.get('/api/protected', passport.authenticate('jwt', {session: false }), (req,
 const PORT = process.env.PORT || 5000;
 
 // Start server on specific PORT
-app.listen(PORT, ()=>console.log('now listening on PORT: '+PORT + 'running as: ' +process.env.NODE_ENV));
+app.listen(PORT, ()=>console.log('now listening on PORT: '+PORT + ' running as: ' +process.env.NODE_ENV));
