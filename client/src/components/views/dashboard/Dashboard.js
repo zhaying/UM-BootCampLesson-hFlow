@@ -27,7 +27,7 @@ function Dashboard(props) {
 
   return (
     <div className={classes.root}>
-      <Grid container className={classes.cMargin} spacing={24}>
+      <Grid container className={classes.cMargin} justify="center" spacing={24}>
         <Grid container className={classes.topMargin} justify="center" spacing={24}>
             <Grid item xs={6}>
               <SimpleCard />
