@@ -1,10 +1,10 @@
 import React from 'react';
-import Login from '../dashboard/Dashboard';
+import DashAppBar from '../navbarDash/NavbarDash';
 
 
 const DashboardPage = () => (
     <div>
-      <Login />
+      <DashAppBar />
     </div>
 );
 

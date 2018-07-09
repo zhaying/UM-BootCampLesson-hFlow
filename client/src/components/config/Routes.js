@@ -17,7 +17,6 @@ export default function LandingPage() {
   return (
     <Router>
       <div>
-        <MenuAppBar />
         <main>
           <Route exact path="/" component={Home} />
           <Route path="/products" component={Products} />
