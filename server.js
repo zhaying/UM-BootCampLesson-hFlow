@@ -75,6 +75,7 @@ app.use('/api/graphql',graphqlHTTP({
 //   res.send('Hello World');
 // });
 app.get('/', function (req, res) {
+  console.log("In the root /");
   // load the front-end (react / angular / etc handles page changes)
   //res.sendFile(path.join(__dirname, '/public/index.html'));
   let theENV = process.env.NODE_ENV || 'development';
@@ -89,6 +90,7 @@ app.get('/', function (req, res) {
 
 });
 app.get('/login', function (req, res) {
+  console.log("In /login");
   // load the front-end (react / angular / etc handles page changes)
   //res.sendFile(path.join(__dirname, '/public/index.html'));
   let theENV = process.env.NODE_ENV || 'development';
@@ -104,6 +106,7 @@ app.get('/login', function (req, res) {
 
 // Register a new user
 app.post('/api/register', (req, res) => {
+  console.log("In /api/register");
   //Variables for easier readability
   let userEmail    = req.body.email,
       userPassword = req.body.password;
@@ -124,8 +127,8 @@ app.post('/api/register', (req, res) => {
 
 // Verify user and send JWT
 app.post('/api/authenticate',(req, res)=>{
-  console.log("In /authenticate");
-  console.log("body data",req.body);
+  console.log("In /api/authenticate");
+  //console.log("body data",req.body);
   let userEmail    = req.body.email,
       userPassword = req.body.password;
   // Check the required fields have been sent
@@ -149,14 +152,16 @@ app.post('/api/authenticate',(req, res)=>{
 
 // Authorize user route
 app.get('/api/userAuthorization', passport.authenticate('jwt', {session:false}), (req, res) => {
-  console.log("console.log.req.headers=",req.headers);
-  console.log("console.log.req.user=",req.user);
+  console.log("In /api/userAuthorization");
+  //console.log("console.log.req.headers=",req.headers);
+  //console.log("console.log.req.user=",req.user);
   res.send(req.user);
 });
 
 // Test protected Route
 app.get('/api/protected', passport.authenticate('jwt', {session: false }), (req, res) => {
-    res.send('revealed secret');
+  console.log("In /api/protected");
+  res.send('revealed secret');
 });
 
 // Setup express config variables
