@@ -7,6 +7,13 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Overview from '../overview/Overview';
 import Attendance from '../attendance/Attendance';
+import Info from '../info/Info';
+import KeyContacts from '../keyContacts/KeyContacts';
+import OffSiteActivities from '../offSite/OffSite';
+import ShuttleSchedules from '../shuttleSchedules/ShuttleSchedules';
+import Executives from '../executives/Executives';
+import AccountBreakdown from '../accountBreakdown/AccountBreakdown';
+import AuthorizedSignatures from '../authorizedSignatures/AuthorizedSignatures';
 
 function TabContainer(props) {
   return (
@@ -23,7 +30,6 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "#FAFAFA",
   },
 });
 
@@ -50,17 +56,38 @@ class TabsWrappedLabel extends React.Component {
           </Tabs>
         </AppBar>
         {value === 'one' && <TabContainer>
+          <Info />
           <Overview />
           <Attendance />
-        </TabContainer>}
+          <KeyContacts />
+          <OffSiteActivities />
+          <ShuttleSchedules />
+          <Executives />
+          <AccountBreakdown />
+          <AuthorizedSignatures />
+          </TabContainer>}
         {value === 'two' && <TabContainer>
+          <Info />
           <Overview />
           <Attendance />
-        </TabContainer>}
+          <KeyContacts />
+          <OffSiteActivities />
+          <ShuttleSchedules />
+          <Executives />
+          <AccountBreakdown />
+          <AuthorizedSignatures />
+          </TabContainer>}
         {value === 'three' && <TabContainer>
+          <Info />
           <Overview />
           <Attendance />
-        </TabContainer>}
+          <KeyContacts />
+          <OffSiteActivities />
+          <ShuttleSchedules />
+          <Executives />
+          <AccountBreakdown />
+          <AuthorizedSignatures />
+          </TabContainer>}
       </div>
     );
   }

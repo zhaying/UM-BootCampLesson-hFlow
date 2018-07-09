@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import ButtonAppBar from '../navbar/Navbar';
+import MenuAppBar from '../navbar/MenuAppBar';
 
 const styles = theme => ({
   root: {
@@ -26,7 +26,7 @@ function Home(props) {
 
   return(
     <div className={classes.root}>
-    <ButtonAppBar />
+    <MenuAppBar />
       <Grid container spacing={24} className={classes.topMargin}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
