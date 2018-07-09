@@ -56,7 +56,7 @@ const strategy = new JwtStrategy(opts, (payload, next)=>{
 passport.use(strategy);
 app.use(passport.initialize());
 // Set static files
-let servingFolder = process.env.servingFolder || '/client/public';
+let servingFolder = process.env.servingFolder || '/client/build';
 app.use(express.static(__dirname + servingFolder));
 // Parse the body
 app.use(parser.urlencoded({
@@ -168,4 +168,4 @@ app.get('/api/protected', passport.authenticate('jwt', {session: false }), (req,
 const PORT = process.env.SERVER_PORT || 5000;
 
 // Start server on specific PORT
-app.listen(PORT, ()=>console.log('now listening on PORT: '+PORT));
+app.listen(PORT, ()=>console.log('now listening on PORT: '+PORT + 'running as: ' +process.env.NODE_ENV));

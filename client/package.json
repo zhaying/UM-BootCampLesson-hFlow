@@ -5,7 +5,9 @@
   "proxy": {
     "/api": {"target": "http://localhost:5000" }
     },
-  "dependencies": {},
+  "dependencies": {
+    "react-scripts": "^1.1.4"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
