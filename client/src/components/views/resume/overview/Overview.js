@@ -41,7 +41,7 @@ class Overview extends React.Component {
         <div className={classes.root}>
             <Grid container alignItems={'center'} spacing={24}>
                 <Grid item xs={12}>
-                    <h1>Overview</h1>
+                    <h1>Meeting Overview</h1>
                     <p className="lead">In non nulla purus. Nulla dictum nisl lacus, quis semper dui gravida ut. Sed eu metus augue. Donec augue dui, tempor in ante a, elementum laoreet nisi. Etiam nec sapien id magna placerat gravida. Cras id pulvinar mauris. Etiam id efficitur nunc. Praesent laoreet blandit nunc, ac consectetur massa. Nam massa tellus, lacinia non sem at, pretium euismod dui. Nam pellentesque erat nec auctor faucibus. Fusce convallis pulvinar magna, eget dapibus leo laoreet ut. Mauris eu pretium leo. Curabitur non tincidunt lectus.</p>
                     <OpenIconSpeedDial />
                 </Grid>

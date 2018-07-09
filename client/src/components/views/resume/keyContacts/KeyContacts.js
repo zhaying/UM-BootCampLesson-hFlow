@@ -39,12 +39,8 @@ const styles = theme => ({
     }
 });
 
-class Executives extends React.Component {
-<<<<<<< HEAD
-
-=======
+class KeyContacts extends React.Component {
   
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
 
   render() {
     const { classes } = this.props;
@@ -53,15 +49,14 @@ class Executives extends React.Component {
         <div className={classes.root}>
             <Grid container alignItems={'center'} spacing={24}>
                 <Grid item xs={12}>
-                    <h1>Executives</h1>
+                    <h1>Key Meeting Contatcs</h1>
                         <Table className={classes.table}>
                             <TableHead>
                                 <TableRow>
                                     <TableCell>Name</TableCell>
                                     <TableCell>Title</TableCell>
-                                    <TableCell>Dates</TableCell>
-                                    <TableCell>Amenities</TableCell>
-                                    <TableCell>Preferences</TableCell>
+                                    <TableCell>Mobile</TableCell>
+                                    <TableCell>Email</TableCell>
                                 </TableRow>
                             </TableHead>
                         <TableBody>
@@ -70,6 +65,11 @@ class Executives extends React.Component {
                                 <TableCell ></TableCell>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell></TableCell>
+                                <TableCell ></TableCell>
+                                <TableCell></TableCell>
                                 <TableCell></TableCell>
                             </TableRow>
                             <TableRow>
@@ -77,19 +77,7 @@ class Executives extends React.Component {
                                 <TableCell ></TableCell>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell></TableCell>
-                                <TableCell ></TableCell>
-                                <TableCell></TableCell>
-                                <TableCell></TableCell>
-                                <TableCell></TableCell>
-<<<<<<< HEAD
-                            </TableRow>
-=======
                             </TableRow>  
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
                         </TableBody>
                     </Table>
                     <OpenIconSpeedDial />
@@ -100,12 +88,8 @@ class Executives extends React.Component {
   }
 }
 
-Executives.propTypes = {
+KeyContacts.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-<<<<<<< HEAD
-export default withStyles(styles)(Executives);
-=======
-export default withStyles(styles)(Executives);
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
+export default withStyles(styles)(KeyContacts);

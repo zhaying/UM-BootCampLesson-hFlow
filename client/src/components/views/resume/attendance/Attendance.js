@@ -8,6 +8,10 @@ import OpenIconSpeedDial from '../speedDial/SpeedDial';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import RepeatIcon from '@material-ui/icons/Repeat';
+import PersonIcon from '@material-ui/icons/Person';
+import GroupIcon from '@material-ui/icons/Group';
 
 
 const styles = theme => ({
@@ -47,25 +51,22 @@ class Attendance extends React.Component {
                     <h1>Attendance</h1>
                         <List component="nav">
                             <ListItem>
-                                <ListItemText inset primary="People:" />
+                                <ListItemIcon>
+                                    <PersonIcon />
+                                </ListItemIcon>
+                                <ListItemText inset primary="Number of Guests:" />
                             </ListItem>
                             <ListItem>
-                                <ListItemText inset primary="%Male:" />
+                                <ListItemIcon>
+                                    <GroupIcon />
+                                </ListItemIcon>
+                                <ListItemText inset primary="Percentage of Spousal Attendance:" />
                             </ListItem>
                             <ListItem>
-                                <ListItemText inset primary="%Female:" />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText inset primary="%Spousal Attendance:" />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText inset primary="Peak Night Rooms Committed:" />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText inset primary="Peak Night Total Rooms Reserved:" />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText inset primary="%Reserved/Committed:" />
+                                <ListItemIcon>
+                                    <RepeatIcon />
+                                </ListItemIcon>
+                                <ListItemText inset primary="Is this a repeat event?" />
                             </ListItem>
                         </List>
                     <OpenIconSpeedDial />
