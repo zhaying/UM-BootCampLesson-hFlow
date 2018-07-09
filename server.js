@@ -101,6 +101,32 @@ app.get('/login', function (req, res) {
      .sendFile(path.join(__dirname, '/client/build/index.html'));
   }
 });
+app.get('/resume', function (req, res) {
+  console.log("In /login");
+  // Load frontend
+  let theENV = process.env.NODE_ENV || 'development';
+  if(theENV === 'development'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/public/index.html'));
+  }
+  if(theENV === 'production'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/build/index.html'));
+  }
+});
+app.get('/dashboard', function (req, res) {
+  console.log("In /login");
+  // Load frontend
+  let theENV = process.env.NODE_ENV || 'development';
+  if(theENV === 'development'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/public/index.html'));
+  }
+  if(theENV === 'production'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/build/index.html'));
+  }
+});
 
 // Register a new user
 app.post('/api/register', (req, res) => {
