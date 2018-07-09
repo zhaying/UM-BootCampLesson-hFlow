@@ -168,4 +168,4 @@ app.get('/api/protected', passport.authenticate('jwt', {session: false }), (req,
 const PORT = process.env.PORT || 5000;
 
 // Start server on specific PORT
-app.listen(PORT, ()=>console.log('now listening on PORT: '+PORT + 'running as: ' +process.env.NODE_ENV));
+app.listen(PORT, ()=>console.log('now listening on PORT: '+PORT + ' running as: ' +process.env.NODE_ENV));
