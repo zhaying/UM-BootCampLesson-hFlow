@@ -40,12 +40,6 @@ const styles = theme => ({
 });
 
 class Executives extends React.Component {
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
-
   render() {
     const { classes } = this.props;
 
@@ -85,11 +79,7 @@ class Executives extends React.Component {
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
-<<<<<<< HEAD
                             </TableRow>
-=======
-                            </TableRow>  
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
                         </TableBody>
                     </Table>
                     <OpenIconSpeedDial />
@@ -104,8 +94,4 @@ Executives.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-<<<<<<< HEAD
 export default withStyles(styles)(Executives);
-=======
-export default withStyles(styles)(Executives);
->>>>>>> 344887c8bf78387d322a1940629b12695365b3cc
