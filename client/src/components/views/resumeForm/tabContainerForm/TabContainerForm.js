@@ -10,9 +10,9 @@ import Attendance from '../attendance/Attendance';
 import Info from '../info/Info';
 import KeyContacts from '../keyContacts/KeyContacts';
 import OffSiteActivities from '../offSite/OffSite';
-// import ShuttleSchedules from '../shuttleSchedules/ShuttleSchedules';
-// import Executives from '../executives/Executives';
-// import AccountBreakdown from '../accountBreakdown/AccountBreakdown';
+import ShuttleSchedules from '../shuttleSchedules/ShuttleSchedules';
+import Executives from '../executives/Executives';
+import AccountBreakdown from '../../resume/accountBreakdown/AccountBreakdown';
 // import AuthorizedSignatures from '../authorizedSignatures/AuthorizedSignatures';
 
 function TabContainer(props) {
@@ -61,10 +61,10 @@ class TabContainerForm extends React.Component {
           <Attendance />
           <KeyContacts />
           <OffSiteActivities />
-          {/* <ShuttleSchedules />
+          <ShuttleSchedules />
           <Executives />
           <AccountBreakdown />
-          <AuthorizedSignatures /> */}
+          {/* <AuthorizedSignatures /> */}
           </TabContainer>}
         {value === 'two' && <TabContainer>
           {/* <Info />
