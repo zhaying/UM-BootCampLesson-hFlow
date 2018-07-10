@@ -20,6 +20,9 @@ import InsertInvitationIcon from '@material-ui/icons/InsertInvitation';
 import DescriptionIcon from '@material-ui/icons/Description';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import MaskedInput from 'react-text-mask';
+import FormControl from '@material-ui/core/FormControl';
 
 
 const styles = theme => ({
@@ -46,11 +49,42 @@ const styles = theme => ({
     }
 });
 
-class Info extends React.Component {
+function TextMaskCustom(props) {
+    const { inputRef, ...other } = props;
   
+    return (
+      <MaskedInput
+        {...other}
+        ref={inputRef}
+        mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+        placeholderChar={'\u2000'}
+        showMask
+      />
+    );
+  }
+  
+  TextMaskCustom.propTypes = {
+    inputRef: PropTypes.func.isRequired,
+  };
+  
+
+
+class Info extends React.Component {
+    state = {
+        textmask: '(1  )    -    ',
+        numberformat: '1320',
+      };
+    
+      handleChange = name => event => {
+        this.setState({
+          [name]: event.target.value,
+        });
+      };
+    
 
   render() {
     const { classes } = this.props;
+    const { textmask } = this.state;
 
     return (
         <div className={classes.root}>
@@ -139,13 +173,14 @@ class Info extends React.Component {
                                     />
                                 </TableCell>
                                 <TableCell>
-                                    <Input
-                                        placeholder="Mobile:"
-                                        className={classes.input}
-                                        inputProps={{
-                                        'aria-label': 'Description',
-                                        }}
-                                    />
+                                    <FormControl className={classes.formControl}>
+                                        <Input
+                                            value={textmask}
+                                            onChange={this.handleChange('textmask')}
+                                            id="formatted-text-mask-input"
+                                            inputComponent={TextMaskCustom}
+                                        />
+                                    </FormControl>
                                 </TableCell>
                                 <TableCell>
                                     <Input
@@ -171,13 +206,14 @@ class Info extends React.Component {
                                     />
                                 </TableCell>
                                 <TableCell>
-                                    <Input
-                                        placeholder="Mobile:"
-                                        className={classes.input}
-                                        inputProps={{
-                                        'aria-label': 'Description',
-                                        }}
-                                    />
+                                    <FormControl className={classes.formControl}>
+                                        <Input
+                                            value={textmask}
+                                            onChange={this.handleChange('textmask')}
+                                            id="formatted-text-mask-input"
+                                            inputComponent={TextMaskCustom}
+                                        />
+                                    </FormControl>
                                 </TableCell>
                                 <TableCell>
                                     <Input
@@ -203,13 +239,14 @@ class Info extends React.Component {
                                     />
                                 </TableCell>
                                 <TableCell>
-                                    <Input
-                                        placeholder="Mobile:"
-                                        className={classes.input}
-                                        inputProps={{
-                                        'aria-label': 'Description',
-                                        }}
-                                    />
+                                    <FormControl className={classes.formControl}>
+                                        <Input
+                                            value={textmask}
+                                            onChange={this.handleChange('textmask')}
+                                            id="formatted-text-mask-input"
+                                            inputComponent={TextMaskCustom}
+                                        />
+                                    </FormControl>
                                 </TableCell>
                                 <TableCell>
                                     <Input

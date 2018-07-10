@@ -6,9 +6,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Overview from '../overview/Overview';
-// import Attendance from '../attendance/Attendance';
+import Attendance from '../attendance/Attendance';
 import Info from '../info/Info';
-// import KeyContacts from '../keyContacts/KeyContacts';
+import KeyContacts from '../keyContacts/KeyContacts';
 // import OffSiteActivities from '../offSite/OffSite';
 // import ShuttleSchedules from '../shuttleSchedules/ShuttleSchedules';
 // import Executives from '../executives/Executives';
@@ -58,9 +58,9 @@ class TabContainerForm extends React.Component {
         {value === 'one' && <TabContainer>
           <Info />
           <Overview />
-          {/* <Attendance />
+          <Attendance />
           <KeyContacts />
-          <OffSiteActivities />
+          {/* <OffSiteActivities />
           <ShuttleSchedules />
           <Executives />
           <AccountBreakdown />
