@@ -14,6 +14,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import GroupIcon from '@material-ui/icons/Group';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
+import Button from '@material-ui/core/Button';
 
 
 const styles = theme => ({
@@ -89,6 +90,7 @@ class Attendance extends React.Component {
                                 />
                             </ListItem>
                         </List>
+                        <Button variant="contained" color="primary" className={classes.button}>Submit</Button>
                     <OpenIconSpeedDial />
                 </Grid>
             </Grid>
