@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../../resume/speedDial/SpeedDial';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 
 const styles = theme => ({
@@ -50,7 +51,7 @@ class Overview extends React.Component {
                             className={classes.textField}
                             margin="normal"
                         />
-
+                    <Button variant="contained" color="primary" className={classes.button} >Submit</Button>
                     <OpenIconSpeedDial />
                 </Grid>
             </Grid>

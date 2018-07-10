@@ -16,6 +16,7 @@ import TableRow from '@material-ui/core/TableRow';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
+import Button from '@material-ui/core/Button';
 
 
 const styles = theme => ({
@@ -154,6 +155,7 @@ class AuthorizedSignatures extends React.Component {
                             </TableRow>  
                         </TableBody>
                     </Table>
+                    <Button variant="contained" color="primary" className={classes.button} >Submit</Button>
                     <OpenIconSpeedDial />
                 </Grid>
             </Grid>
