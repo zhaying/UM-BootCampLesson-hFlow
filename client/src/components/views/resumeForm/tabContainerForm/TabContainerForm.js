@@ -13,7 +13,7 @@ import OffSiteActivities from '../offSite/OffSite';
 import ShuttleSchedules from '../shuttleSchedules/ShuttleSchedules';
 import Executives from '../executives/Executives';
 import AccountBreakdown from '../../resume/accountBreakdown/AccountBreakdown';
-// import AuthorizedSignatures from '../authorizedSignatures/AuthorizedSignatures';
+import AuthorizedSignatures from '../authorizedSignatures/AuthorizedSignatures';
 
 function TabContainer(props) {
   return (
@@ -64,10 +64,10 @@ class TabContainerForm extends React.Component {
           <ShuttleSchedules />
           <Executives />
           <AccountBreakdown />
-          {/* <AuthorizedSignatures /> */}
+          <AuthorizedSignatures />
           </TabContainer>}
         {value === 'two' && <TabContainer>
-          {/* <Info />
+          <Info />
           <Overview />
           <Attendance />
           <KeyContacts />
@@ -75,10 +75,10 @@ class TabContainerForm extends React.Component {
           <ShuttleSchedules />
           <Executives />
           <AccountBreakdown />
-          <AuthorizedSignatures /> */}
+          <AuthorizedSignatures />
           </TabContainer>}
         {value === 'three' && <TabContainer>
-          {/* <Info />
+          <Info />
           <Overview />
           <Attendance />
           <KeyContacts />
@@ -86,7 +86,7 @@ class TabContainerForm extends React.Component {
           <ShuttleSchedules />
           <Executives />
           <AccountBreakdown />
-          <AuthorizedSignatures /> */}
+          <AuthorizedSignatures />
           </TabContainer>}
       </div>
     );
