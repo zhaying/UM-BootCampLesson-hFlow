@@ -13,7 +13,12 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import React, { Component } from 'react';
+import {graphql} from 'react-apollo';//serves as the glue
 
+
+//
+import{getExecutivesQuery} from '../queries/queries';
 
 const styles = theme => ({
     root: {
@@ -39,7 +44,49 @@ const styles = theme => ({
     }
 });
 
+
+class ExecutiveDetails extends Component {
+
+  displayExecutiveDetails(){
+
+    const {executive} = this.props.data;
+    if (executive){
+      return(
+        <div>
+          <h2>{executive.name}</h2>
+          <p>{executive.title}</p>
+          <p>{executive.preferences}</p>
+        </div>
+      )
+    } else{
+      return(
+        <div>Select an Executive</div>
+      );
+    }
+  }
+
+  render() {
+    //console.log(this.props);
+    return (
+      <div id="executive-details">
+      {this.displayExecutiveDetails()}
+      </div>
+    );
+  }
+}
+
+export default graphql(getExecutiveQuery, {
+  options:(props) =>{
+    return{
+      variables:{
+        id:props.executiveId
+      }
+    }
+  }
+})(ExecutiveDetails);
+
 class Executives extends React.Component {
+
   render() {
     const { classes } = this.props;
 
