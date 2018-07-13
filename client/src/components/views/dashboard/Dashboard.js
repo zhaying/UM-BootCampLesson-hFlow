@@ -58,36 +58,6 @@ function Dashboard(props) {
               <SimpleCard />
             </Grid>
         </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
       </Grid>
     </div>
   );
