@@ -60,8 +60,15 @@ const EventType = new GraphQLObjectType({
       eventName:{type:GraphQLString},
       dates:{type:GraphQLString},
       resumeType:{type:GraphQLString},
-      executiveId: {type:GraphQLID},
-      preferenceId: {type:GraphQLID}
+      //executiveId: {type:GraphQLID},
+      preferenceId: {type:GraphQLID},
+      executives: {
+        type: new GraphQLList(ExecutiveType),
+        resolve(parent, args){
+          //return _.filter(events,{executiveId:parent.id});
+          return Executive.find(executiveId);
+        }
+      }
     /*  Executive:{
         type:ExecutiveType,
         resolve(parent, args){
