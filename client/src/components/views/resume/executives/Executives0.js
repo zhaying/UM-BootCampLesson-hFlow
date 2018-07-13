@@ -52,23 +52,17 @@ class Executives extends React.Component {
     } else {
       return data.executives.map(executive =>{
         return(
-          <TableRow key={executive.id} >
-              <TableCell>{executive.name}</TableCell>
-              <TableCell>{executive.title}</TableCell>
-              <TableCell>{executive.dates}</TableCell>
-              <TableCell>amenities</TableCell>
-              <TableCell>{executive.preferences}</TableCell>
-          </TableRow>
+          <li key={executive.id} onClick={(event)=>{this.setState({selected:executive.id})}}>{executive.name}</li>
         );
       })
     }
   }
 
   render() {
-    const {executives} = this.props.data;
+    const {executive} = this.props.data;
     const { classes } = this.props;
     console.log("console.log.executive=",this.props);
-    if (executives){
+    if (executive){
       console.log("In if executive");
         return (
             <div className={classes.root}>
@@ -87,7 +81,13 @@ class Executives extends React.Component {
                                     </TableRow>
                                 </TableHead>
                             <TableBody>
-                                {this.displayExecutives()}
+                              <TableRow>
+                                  <TableCell>{executive.name}</TableCell>
+                                  <TableCell >{executive.title}</TableCell>
+                                  <TableCell>dates</TableCell>
+                                  <TableCell>amenities</TableCell>
+                                  <TableCell>{executive.preferences}</TableCell>
+                              </TableRow>
                             </TableBody>
                         </Table>
                         <OpenIconSpeedDial />
@@ -115,6 +115,7 @@ class Executives extends React.Component {
                             </TableHead>
                         <TableBody>
                             <TableRow>
+                              {this.displayExecutives()}
                                 <TableCell></TableCell>
                                 <TableCell ></TableCell>
                                 <TableCell></TableCell>
