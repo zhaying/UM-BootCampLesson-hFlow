@@ -43,6 +43,9 @@ const getExecutiveQuery = gql`
         name
         title
         preferences
+        events {
+          dates
+        }
     }
   }
 `
