@@ -7,6 +7,8 @@ import AuthenticatedComponent from '../auth/AuthenticatedComponent';
 import Resume from '../views/pages/Resume';
 import ResumeForm from '../views/pages/ResumeForm';
 import DashboardPage from '../views/pages/DashboardPage';
+import FadeInTestPage from '../views/pages/FadeInTestPage';
+import NewResumePage from '../views/pages/NewResumePage';
 
 
 export default function LandingPage() {
@@ -22,6 +24,8 @@ export default function LandingPage() {
               <Route path="/dashboard"  component={DashboardPage} />
               <Route path="/resume"     component={Resume} />
               <Route path="/resumeform"     component={ResumeForm} />
+              <Route path="/fade"     component={FadeInTestPage} />
+              <Route path="/newresume"     component={NewResumePage} />
             </AuthenticatedComponent>
           </Switch>
         </main>
