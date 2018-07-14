@@ -9,7 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
-import logo from '../../../img/atriadwhite.png';
+import logo from '../../../img/atriad4.png';
 //import IconButton from '@material-ui/core/IconButton';
 //import MenuIcon from '@material-ui/icons/Menu';
 //import { grey } from '@material-ui/core/colors';
@@ -75,7 +75,6 @@ class MenuAppBar extends React.Component {
             <Typography variant="title" className={classes.flex}>
               Atriad
             </Typography>
-            <Button className={classes.color} href="/" >Prices</Button>
             <Button className={classes.color} href="/dashboard" >Dashboard</Button>
 
             {button}
