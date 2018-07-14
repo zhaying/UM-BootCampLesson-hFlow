@@ -1,8 +1,10 @@
 const graphql = require ('graphql');
+const GraphQLJSON = require('graphql-type-json');
 const _ = require ('lodash');
 const Executive = require('../models/executive');
 const Event = require('../models/event');
 const Preference = require('../models/preference');
+const Resume = require('../models/resume');
 
 const {
   GraphQLObjectType,
@@ -81,52 +83,22 @@ const EventType = new GraphQLObjectType({
       }*/
     })
 });
+
 const ResumeType = new GraphQLObjectType({
   name: 'Resume',
   fields:() =>({
-    info:{type:GraphQLString},
-    organization:{type:GraphQLString},
-    event: {type:GraphQLString},
-    dates: {type:GraphQLString},
-    resumeType: {type:GraphQLString},
-    conventionServicesRepresentative: {type:GraphQLString},
-    cateringRepresentative: {type:GraphQLString},
-    salesRepresentative: {type:GraphQLString},
-    meetingOverview: {type:GraphQLString},
-    summary: {type:GraphQLString},
-    attendance: {type:GraphQLString},
-    numberOfGuests:{type:GraphQLString},
-    percentageOfSpousalAttendance: {type:GraphQLString},
-    repeatEvent: {type:GraphQLString},
-    keyMeetingContacts: {type:GraphQLString},
-    name: {type:GraphQLString},
-    title: {type:GraphQLString},
-    mobile: {type:GraphQLString},
-    email: {type:GraphQLString},
-    offSiteActivities: {type:GraphQLString},
-    dayandDate: {type:GraphQLString},
-    time: {type:GraphQLString},
-    eventNumberofPeople: {type:GraphQLString},
-    location: {type:GraphQLString},
-    transportationDeparturePoint: {type:GraphQLString},
-    shuttleSchedules: {type:GraphQLString},
-    dayandDate: {type:GraphQLString},
-    time: {type:GraphQLString},
-    numberofVehicles: {type:GraphQLString},
-    frequency: {type:GraphQLString},
-    destination: {type:GraphQLString},
-    executives: {type:GraphQLString},
-    name: {type:GraphQLString},
-    title: {type:GraphQLString},
-    dates: {type:GraphQLString},
-    amenities: {type:GraphQLString},
-    preferences: {type:GraphQLString},
-    authorizedSignatures: {type:GraphQLString},
-    authorizedSignerName: {type:GraphQLString},
-    masterAccount: {type:GraphQLString},
-    whichCharges: {type:GraphQLString},
+    id:{type: GraphQLID},
+    info: {type:GraphQLJSON},
+    meetingOverview: {type:GraphQLJSON},
+    attendance: {type:GraphQLJSON},
+    keyMeetingContacts: {type:GraphQLJSON},
+    offSiteActivities: {type:GraphQLJSON},
+    shuttleSchedules: {type:GraphQLJSON},
+    executives: {type:GraphQLJSON},
+    authorizedSignatures: {type:GraphQLJSON}
   })
-})
+});
+
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields:{
@@ -174,6 +146,12 @@ const RootQuery = new GraphQLObjectType({
      resolve(parent, args){
       // return events
       return Event.find({});
+     }
+   },
+   resumes:{
+     type: new GraphQLList(ResumeType),
+     resolve(parent, args){
+       return Resume.find({});
      }
    }
   }
