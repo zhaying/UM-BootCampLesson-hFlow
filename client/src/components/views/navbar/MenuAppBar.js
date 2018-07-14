@@ -14,11 +14,16 @@ import MenuIcon from '@material-ui/icons/Menu';
 const styles = {
   root: {
     flexGrow: 1,
-    background: 'transparent',
-    boxShadow: 'none'
+    background: '#00D49D',
+    boxShadow: 'none',
+    color: '#fff'
   },
   flex: {
     flex: 1,
+    color: '#fff'
+  },
+  color: {
+    color: '#fff'
   },
   menuButton: {
     marginLeft: -12,
@@ -37,27 +42,29 @@ class MenuAppBar extends React.Component {
     const theJwt = getJwt();
     let button;
     if(!theJwt) {
-      button = <Button color="inherit" href="/login" >Login</Button>
+      button = <Button className={classes.color} href="/login" >Login</Button>
     } else {
-      button = <Button color="inherit" onClick={e => this.submitLogout(e)} >Logout</Button>
+      button = <Button onClick={e => this.submitLogout(e)} >Logout</Button>
     }
 
     const { classes } = this.props;
     return (
       <div className={classes.root}>
         <AppBar
-        className={classes.positionSticky}
+        className={classes.positionStatic}
         classes={{
           root: classes.root // class name, e.g. `classes-nesting-root-x`
         }}
         >
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
-            </IconButton>
-            <Typography variant="title" color="inherit" className={classes.flex}>
-              Title
+            </IconButton> */}
+            <Typography variant="title" className={classes.flex}>
+              Atriad
             </Typography>
+            <Button className={classes.color} href="/" >Prices</Button>
+            <Button className={classes.color} href="/dashboard" >Dashboard</Button>
 
             {button}
 
