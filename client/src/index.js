@@ -1,11 +1,10 @@
-import dotenv from 'dotenv';
 import React from 'react';
 import { render } from 'react-dom';
 import { createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles'
 import './css/style.css';
 
 import App from './components/App';
-dotenv.config();
+
 const theme = createMuiTheme({
     palette: {
       primary: {
