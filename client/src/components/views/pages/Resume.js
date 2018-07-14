@@ -31,9 +31,8 @@ function Resume(props) {
         <Grid item xs={12} sm={8}>
         <Paper className={classes.paper}>
             <Typography variant="title" color="inherit">
-                <h1>
-                    Month
-                </h1>
+                Month
+
             </Typography>
             <Typography className={classes.title} color="textSecondary">
             Meeting/Convention Resumes

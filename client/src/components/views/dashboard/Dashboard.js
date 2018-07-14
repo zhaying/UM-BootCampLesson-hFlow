@@ -4,6 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import SimpleCard from '../card/Card';
+import {graphql} from 'react-apollo';//serves as the glue
+
+//graphql data query
+import{getEventsQuery} from '../../queries/queries.js';
 
 const styles = theme => ({
   root: {
@@ -22,49 +26,55 @@ const styles = theme => ({
   }
 });
 
-function Dashboard(props) {
-  const { classes } = props;
+//function Dashboard(props) {
+class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  displayEvents(){
+    var classes = this.props.classes;
+    var data = this.props.data;
+    if(data.loading){
+      return(<div>Loading Events</div>);
+    } else {
+      return data.events.map(event =>{
+        console.log(event);
+        return(
+          <Grid key={event.id} container className={classes.topMargin} justify="center" spacing={24}>
+              <Grid item xs={6} >
+                <SimpleCard eventData={event} />
+              </Grid>
+          </Grid>
+        );
+      })
+    }
+  }
+  render() {
+    console.log("this.props=",this.props);
+  const {events} = this.props.data;
+  const {classes} = this.props;
+    return (
+      <div className={classes.root}>
+        <Grid container className={classes.cMargin} justify="center" spacing={24}>
+        {this.displayEvents()}
+        </Grid>
+      </div>
+    );
+  }
 
-  return (
-    <div className={classes.root}>
-      <Grid container className={classes.cMargin} justify="center" spacing={24}>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-        <Grid container className={classes.topMargin} justify="center" spacing={24}>
-            <Grid item xs={6}>
-              <SimpleCard />
-            </Grid>
-        </Grid>
-      </Grid>
-    </div>
-  );
 }
 
 Dashboard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Dashboard);
+
+export default graphql(getEventsQuery, {
+  options:(props) =>{
+    return{
+      variables:{
+        id:props.executiveId
+      }
+    }
+  }
+})(withStyles(styles)(Dashboard));
