@@ -52,7 +52,7 @@ export const mailFolderListItems = (
       <ListItemIcon>
         <SendIcon />
       </ListItemIcon>
-      <ListItemText primary="Send mail" />
+      <ListItemText primary="Send" />
     </ListItem>
     </Button>
   </div>
@@ -60,23 +60,21 @@ export const mailFolderListItems = (
 
 export const otherMailFolderListItems = (
   <div>
-    <ListItem button>
+    <Button>
+    <ListItem>
       <ListItemIcon>
         <MailIcon />
       </ListItemIcon>
-      <ListItemText primary="All mail" />
+      <ListItemText primary="Messages" />
     </ListItem>
+    </Button>
+    <Button>
     <ListItem button>
       <ListItemIcon>
         <DeleteIcon />
       </ListItemIcon>
       <ListItemText primary="Trash" />
     </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <ReportIcon />
-      </ListItemIcon>
-      <ListItemText primary="Spam" />
-    </ListItem>
+    </Button>
   </div>
 );
