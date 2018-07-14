@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MenuAppBar from '../views/navbar/MenuAppBar';
-import Home from '../views/pages/Home';
+//import Home from '../views/pages/Home';
 import LoginPage from '../views/pages/LoginPage';
 import AuthenticatedComponent from '../auth/AuthenticatedComponent';
 import Resume from '../views/pages/Resume';

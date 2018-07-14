@@ -118,7 +118,33 @@ app.get('/login', function (req, res) {
   }
 });
 app.get('/resume', function (req, res) {
-  console.log("In /login");
+  console.log("In /resume");
+  // Load frontend
+  let theENV = process.env.NODE_ENV || 'development';
+  if(theENV === 'development'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/public/index.html'));
+  }
+  if(theENV === 'production'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/build/index.html'));
+  }
+});
+app.get('/newresume', function (req, res) {
+  console.log("In /newresume");
+  // Load frontend
+  let theENV = process.env.NODE_ENV || 'development';
+  if(theENV === 'development'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/public/index.html'));
+  }
+  if(theENV === 'production'){
+    res.status(200)
+     .sendFile(path.join(__dirname, '/client/build/index.html'));
+  }
+});
+app.get('/resumeform', function (req, res) {
+  console.log("In /resumeform");
   // Load frontend
   let theENV = process.env.NODE_ENV || 'development';
   if(theENV === 'development'){
@@ -131,7 +157,7 @@ app.get('/resume', function (req, res) {
   }
 });
 app.get('/dashboard', function (req, res) {
-  console.log("In /login");
+  console.log("In /dashboard");
   // Load frontend
   let theENV = process.env.NODE_ENV || 'development';
   if(theENV === 'development'){
