@@ -13,8 +13,12 @@ import {ApolloProvider} from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 
 //apollo client setup
+const urlPart = process.env.REACT_APP_ApolloClient_URI || 'http://localhost';
+const portPart = process.env.PORT || 3000;
+const theUrl =  urlPart +':' +portPart +'/api/graphql';
+console.log("theUrl=",theUrl);
 const client = new ApolloClient({
-  uri:'http://localhost:3000/api/graphql'
+  uri: theUrl
 })
 
 export default function LandingPage() {
