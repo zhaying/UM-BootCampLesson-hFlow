@@ -30,6 +30,9 @@ const styles = theme => ({
     textAlign: 'center',
     height: '800px',
     zIndex: '1000' 
+  },
+  Typography: {
+    textAlign: 'center'
   }
 });
 
@@ -46,7 +49,7 @@ function Home(props) {
           <Typography variant="headline" component="h3">
               This is a our body text.
             </Typography>
-            <Grid container justify="center"  spacing={0}>
+            {/* <Grid container justify="center"  spacing={0}>
             text
               <Paper className={classes.paper} elevation={1}>
                 <Typography variant="headline" component="h3">
@@ -56,9 +59,28 @@ function Home(props) {
                   Paper can be used to build surface or other elements for your application.
                 </Typography>
               </Paper>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
+        <Grid container justify="center" spacing={0} >
+          <Grid item xs={12}>
+          <Typography variant="headline" component="h3">
+              This is a our body text.
+            </Typography>
+            {/* <Grid container justify="center"  spacing={0}>
+            text
+              <Paper className={classes.paper} elevation={1}>
+                <Typography variant="headline" component="h3">
+                  This is a sheet of paper.
+                </Typography>
+                <Typography component="p">
+                  Paper can be used to build surface or other elements for your application.
+                </Typography>
+              </Paper>
+            </Grid> */}
+          </Grid>
+        </Grid>
+            
         
       </Grid>
     
