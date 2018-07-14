@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+//import Paper from '@material-ui/core/Paper';
+//import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../speedDial/SpeedDial';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+//import List from '@material-ui/core/List';
+//import ListItem from '@material-ui/core/ListItem';
+//import ListItemText from '@material-ui/core/ListItemText';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -17,7 +17,7 @@ import {graphql} from 'react-apollo';//serves as the glue
 
 
 //
-import{getExecutivesQuery, getExecutiveQuery} from '../../../queries/queries.js';
+import{getExecutivesQuery} from '../../../queries/queries.js';
 
 const styles = theme => ({
     root: {
@@ -55,8 +55,6 @@ class Executives extends React.Component {
           <TableRow key={executive.id} >
               <TableCell>{executive.name}</TableCell>
               <TableCell>{executive.title}</TableCell>
-              <TableCell>{executive.dates}</TableCell>
-              <TableCell>amenities</TableCell>
               <TableCell>{executive.preferences}</TableCell>
           </TableRow>
         );
@@ -81,8 +79,6 @@ class Executives extends React.Component {
                                     <TableRow>
                                         <TableCell>Name</TableCell>
                                         <TableCell>Title</TableCell>
-                                        <TableCell>Dates</TableCell>
-                                        <TableCell>Amenities</TableCell>
                                         <TableCell>Preferences</TableCell>
                                     </TableRow>
                                 </TableHead>

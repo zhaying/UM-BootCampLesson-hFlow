@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+//import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import MenuAppBar from '../navbar/MenuAppBar';
-import zIndex from '@material-ui/core/styles/zIndex';
+//import zIndex from '@material-ui/core/styles/zIndex';
 
 const styles = theme => ({
   root: {
@@ -29,7 +29,7 @@ const styles = theme => ({
     background: '#FAFAFA',
     textAlign: 'center',
     height: '800px',
-    zIndex: '1000' 
+    zIndex: '1000'
   },
   Typography: {
     textAlign: 'center'
@@ -80,17 +80,17 @@ function Home(props) {
             </Grid> */}
           </Grid>
         </Grid>
-            
-        
+
+
       </Grid>
-    
+
     </div>
   );
 
-  Home.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
-
 }
+Home.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
 
 export default withStyles(styles)(Home);

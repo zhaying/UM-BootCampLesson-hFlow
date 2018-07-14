@@ -3,9 +3,9 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
+//import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -33,18 +33,15 @@ const styles = {
 
 //function SimpleCard(props) {
 class SimpleCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   submit(e) {
-    console.log(e);
+  //  console.log(e);
     this.props.history.push('/resume');
   };
 
 render() {
     const { classes, eventData} = this.props;
-    console.log("SimpleCard.value=", this.props);
+  //  console.log("SimpleCard.value=", this.props);
       return (
         <div>
           <Card className={classes.card}>

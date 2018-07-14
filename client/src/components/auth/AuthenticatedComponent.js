@@ -21,7 +21,7 @@ class AuthenticatedComponent extends React.Component {
 
     axios.get('/api/userAuthorization', {headers:{Authorization: `Bearer ${jwt}` } })
     .then(res => {
-      console.log('res.data=', res.data);
+    //  console.log('res.data=', res.data);
       this.setState({ user: res.data.email });
     })
     .catch(err => {

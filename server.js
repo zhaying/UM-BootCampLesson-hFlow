@@ -67,9 +67,11 @@ const strategy = new JwtStrategy(opts, (payload, next)=>{
 
 passport.use(strategy);
 app.use(passport.initialize());
+
 // Set static files
 let servingFolder = process.env.servingFolder || '/client/build';
 app.use(express.static(__dirname + servingFolder));
+
 // Parse the body
 app.use(parser.urlencoded({
   extended: false
@@ -100,6 +102,8 @@ app.get('/', function (req, res) {
   }
 
 });
+
+
 app.get('/login', function (req, res) {
   console.log("In /login");
   // Load frontend

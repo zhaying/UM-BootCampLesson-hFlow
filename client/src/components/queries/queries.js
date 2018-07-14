@@ -22,6 +22,22 @@ const getEventsQuery = gql`
     }
   }
 `
+const getResumesQuery = gql`
+  {
+    resumes {
+      id
+      info
+      meetingOverview
+      attendance
+      keyMeetingContacts
+      offSiteActivities
+      shuttleSchedules
+      executives
+      authorizedSignatures
+
+  }
+  }
+`
 /*const getEventsQuery = gql`
   {
     events{
@@ -60,4 +76,4 @@ const getExecutiveQuery = gql`
 `
 
 
-export{getExecutivesQuery, addExecutiveMutation, getExecutiveQuery,getEventsQuery};
+export{getExecutivesQuery, addExecutiveMutation, getExecutiveQuery,getEventsQuery,getResumesQuery};

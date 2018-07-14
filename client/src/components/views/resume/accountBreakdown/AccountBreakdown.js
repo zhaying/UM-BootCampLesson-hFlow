@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+//import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../speedDial/SpeedDial';
@@ -10,7 +10,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HotelIcon from '@material-ui/icons/Hotel';
-import GroupIcon from '@material-ui/icons/Group';
+//import GroupIcon from '@material-ui/icons/Group';
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import MicIcon from '@material-ui/icons/Mic';
 import MovieIcon from '@material-ui/icons/Movie';
@@ -45,7 +45,7 @@ const styles = theme => ({
 });
 
 class AccountBreakdown extends React.Component {
-  
+
 
   render() {
     const { classes } = this.props;

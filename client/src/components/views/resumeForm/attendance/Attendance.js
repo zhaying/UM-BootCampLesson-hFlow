@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+//import Paper from '@material-ui/core/Paper';
+//import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../../resume/speedDial/SpeedDial';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+//import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import PersonIcon from '@material-ui/icons/Person';
 import GroupIcon from '@material-ui/icons/Group';
-import TextField from '@material-ui/core/TextField';
+//import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 
@@ -42,7 +42,7 @@ const styles = theme => ({
 });
 
 class Attendance extends React.Component {
-  
+
 
   render() {
     const { classes } = this.props;

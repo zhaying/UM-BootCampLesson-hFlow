@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+//import Paper from '@material-ui/core/Paper';
+//import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../speedDial/SpeedDial';
+import {graphql} from 'react-apollo';//serves as the glue
 
+
+//
+import{getResumesQuery} from '../../../queries/queries.js';
 
 const styles = theme => ({
     root: {
@@ -32,17 +36,28 @@ const styles = theme => ({
 });
 
 class Overview extends React.Component {
-  
+  displaySummary(){
+    var data = this.props.data;
+    if(data.loading){
+      var message = "Loading Info";
+      return(message);
+    } else {
+      return data.resumes.map(resume =>{
+        return(
+          resume.meetingOverview.summary
+        );
+      })
+    }
+  }
 
   render() {
     const { classes } = this.props;
-
     return (
         <div className={classes.root}>
             <Grid container alignItems={'center'} spacing={24}>
                 <Grid item xs={12}>
                     <h1>Meeting Overview</h1>
-                    <p className="lead">In non nulla purus. Nulla dictum nisl lacus, quis semper dui gravida ut. Sed eu metus augue. Donec augue dui, tempor in ante a, elementum laoreet nisi. Etiam nec sapien id magna placerat gravida. Cras id pulvinar mauris. Etiam id efficitur nunc. Praesent laoreet blandit nunc, ac consectetur massa. Nam massa tellus, lacinia non sem at, pretium euismod dui. Nam pellentesque erat nec auctor faucibus. Fusce convallis pulvinar magna, eget dapibus leo laoreet ut. Mauris eu pretium leo. Curabitur non tincidunt lectus.</p>
+                    <p className="lead">{this.displaySummary()}</p>
                     <OpenIconSpeedDial />
                 </Grid>
             </Grid>
@@ -55,4 +70,12 @@ Overview.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Overview);
+export default graphql(getResumesQuery, {
+  options:(props) =>{
+    return{
+      variables:{
+        id:props.executiveId
+      }
+    }
+  }
+})(withStyles(styles)(Overview));

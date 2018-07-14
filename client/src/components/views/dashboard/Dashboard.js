@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+//import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import SimpleCard from '../card/Card';
 import {graphql} from 'react-apollo';//serves as the glue
@@ -28,9 +28,7 @@ const styles = theme => ({
 
 //function Dashboard(props) {
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   displayEvents(){
     var classes = this.props.classes;
     var data = this.props.data;
@@ -51,7 +49,7 @@ class Dashboard extends React.Component {
   }
   render() {
     console.log("this.props=",this.props);
-  const {events} = this.props.data;
+  
   const {classes} = this.props;
     return (
       <div className={classes.root}>

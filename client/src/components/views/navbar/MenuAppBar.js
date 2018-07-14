@@ -3,12 +3,15 @@ import { withRouter } from 'react-router-dom';
 import { getJwt } from '../../subcom/jwt';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Avatar from '@material-ui/core/Avatar';
+import logo from '../../../img/atriadwhite.png';
+//import IconButton from '@material-ui/core/IconButton';
+//import MenuIcon from '@material-ui/icons/Menu';
 //import { grey } from '@material-ui/core/colors';
 
 const styles = {
@@ -28,7 +31,14 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
-  }
+  },
+  avatar: {
+    margin: 10,
+  },
+  bigAvatar: {
+    width: 60,
+    height: 60,
+  },
 };
 
 class MenuAppBar extends React.Component {
@@ -40,14 +50,15 @@ class MenuAppBar extends React.Component {
 
   render() {
     const theJwt = getJwt();
+    const { classes } = this.props;
     let button;
     if(!theJwt) {
       button = <Button className={classes.color} href="/login" >Login</Button>
     } else {
-      button = <Button onClick={e => this.submitLogout(e)} >Logout</Button>
+      button = <Button className={classes.color} onClick={e => this.submitLogout(e)} >Logout</Button>
     }
 
-    const { classes } = this.props;
+
     return (
       <div className={classes.root}>
         <AppBar
@@ -60,6 +71,7 @@ class MenuAppBar extends React.Component {
             {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton> */}
+            <Avatar alt="Logo" src={logo} className={classNames(classes.avatar, classes.bigAvatar)} />
             <Typography variant="title" className={classes.flex}>
               Atriad
             </Typography>

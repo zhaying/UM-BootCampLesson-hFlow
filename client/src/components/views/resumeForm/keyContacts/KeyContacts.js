@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+//import Paper from '@material-ui/core/Paper';
+//import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../../resume/speedDial/SpeedDial';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+//import List from '@material-ui/core/List';
+//import ListItem from '@material-ui/core/ListItem';
+//import ListItemText from '@material-ui/core/ListItemText';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import TextField from '@material-ui/core/TextField';
+//import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
+//import InputLabel from '@material-ui/core/InputLabel';
 import MaskedInput from 'react-text-mask';
-import FormControl from '@material-ui/core/FormControl';
+//import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 
 
@@ -50,7 +50,7 @@ const styles = theme => ({
 
 function TextMaskCustom(props) {
     const { inputRef, ...other } = props;
-  
+
     return (
       <MaskedInput
         {...other}
@@ -61,7 +61,7 @@ function TextMaskCustom(props) {
       />
     );
   }
-  
+
   TextMaskCustom.propTypes = {
     inputRef: PropTypes.func.isRequired,
   };
@@ -71,7 +71,7 @@ class KeyContacts extends React.Component {
         textmask: '(1  )    -    ',
         numberformat: '1320',
       };
-    
+
       handleChange = name => event => {
         this.setState({
           [name]: event.target.value,
@@ -207,7 +207,7 @@ class KeyContacts extends React.Component {
                                         }}
                                     />
                                 </TableCell>
-                            </TableRow>  
+                            </TableRow>
                         </TableBody>
                     </Table>
                     <Button variant="contained" color="primary" className={classes.button} >Submit</Button>

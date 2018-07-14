@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+//import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../speedDial/SpeedDial';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+//import List from '@material-ui/core/List';
+//import ListItem from '@material-ui/core/ListItem';
+//import ListItemText from '@material-ui/core/ListItemText';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import {graphql} from 'react-apollo';//serves as the glue
+
+
+//
+import{getResumesQuery} from '../../../queries/queries.js';
 
 
 const styles = theme => ({
@@ -40,7 +45,24 @@ const styles = theme => ({
 });
 
 class AuthorizedSignatures extends React.Component {
-  
+  displayTableRow(){
+    var data = this.props.data;
+    if(data.loading){
+      return(<tr><td>Loading Info</td></tr>);
+    } else {
+      return data.resumes.map(resume =>{
+
+        return(
+              <TableRow key={resume.id}>
+                  <TableCell>{resume.authorizedSignatures.authorizedSignerName}</TableCell>
+                  <TableCell >{resume.authorizedSignatures.masterAccount}</TableCell>
+                  <TableCell>{resume.authorizedSignatures.whichCharges}</TableCell>
+              </TableRow>
+        );
+      })
+    }
+  }
+
 
   render() {
     const { classes } = this.props;
@@ -61,23 +83,9 @@ class AuthorizedSignatures extends React.Component {
                                     <TableCell>Which Charges, All and Business Center</TableCell>
                                 </TableRow>
                             </TableHead>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell></TableCell>
-                                <TableCell ></TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell></TableCell>
-                                <TableCell ></TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell></TableCell>
-                                <TableCell ></TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>  
-                        </TableBody>
+                            <TableBody >
+                              {this.displayTableRow()}
+                            </TableBody>
                     </Table>
                     <OpenIconSpeedDial />
                 </Grid>
@@ -91,4 +99,12 @@ AuthorizedSignatures.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AuthorizedSignatures);
+export default graphql(getResumesQuery, {
+  options:(props) =>{
+    return{
+      variables:{
+        id:props.executiveId
+      }
+    }
+  }
+})(withStyles(styles)(AuthorizedSignatures));

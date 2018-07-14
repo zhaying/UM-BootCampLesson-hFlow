@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+//import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import OpenIconSpeedDial from '../../resume/speedDial/SpeedDial';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+//import List from '@material-ui/core/List';
+//import ListItem from '@material-ui/core/ListItem';
+//import ListItemText from '@material-ui/core/ListItemText';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import TextField from '@material-ui/core/TextField';
+//import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
+//import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
 
 
@@ -44,7 +44,7 @@ const styles = theme => ({
 });
 
 class AuthorizedSignatures extends React.Component {
-  
+
 
   render() {
     const { classes } = this.props;
@@ -152,7 +152,7 @@ class AuthorizedSignatures extends React.Component {
                                         }}
                                     />
                                 </TableCell>
-                            </TableRow>  
+                            </TableRow>
                         </TableBody>
                     </Table>
                     <Button variant="contained" color="primary" className={classes.button} >Submit</Button>
