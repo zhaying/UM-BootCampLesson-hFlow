@@ -48,7 +48,7 @@ export const mailFolderListItems = (
     </ListItem>
     </Button>
     <Button>
-    <ListItem button>
+    <ListItem>
       <ListItemIcon>
         <SendIcon />
       </ListItemIcon>
@@ -69,7 +69,7 @@ export const otherMailFolderListItems = (
     </ListItem>
     </Button>
     <Button>
-    <ListItem button>
+    <ListItem>
       <ListItemIcon>
         <DeleteIcon />
       </ListItemIcon>
