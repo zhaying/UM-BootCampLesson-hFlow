@@ -18,6 +18,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MaskedInput from 'react-text-mask';
 import FormControl from '@material-ui/core/FormControl';
+import Button from '@material-ui/core/Button';
 
 
 const styles = theme => ({
@@ -209,6 +210,7 @@ class KeyContacts extends React.Component {
                             </TableRow>  
                         </TableBody>
                     </Table>
+                    <Button variant="contained" color="primary" className={classes.button} >Submit</Button>
                     <OpenIconSpeedDial />
                 </Grid>
             </Grid>

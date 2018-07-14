@@ -11,7 +11,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
 import Dashboard from '../dashboard/Dashboard';
-// import { mailFolderListItems, otherMailFolderListItems } from './tileData';
+import { mailFolderListItems, otherMailFolderListItems } from './tileData';
 
 const drawerWidth = 240;
 
@@ -68,9 +68,9 @@ class DashAppBar extends React.Component {
       <div>
         <div className={classes.toolbar} />
         <Divider />
-        {/* <List>{mailFolderListItems}</List> */}
+        <List>{mailFolderListItems}</List>
         <Divider />
-        {/* <List>{otherMailFolderListItems}</List> */}
+        <List>{otherMailFolderListItems}</List>
       </div>
     );
 

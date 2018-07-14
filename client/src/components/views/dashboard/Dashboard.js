@@ -45,13 +45,6 @@ class Dashboard extends React.Component {
                 <SimpleCard eventData={event} />
               </Grid>
           </Grid>
-          // <TableRow key={executive.id} >
-          //     <TableCell>{executive.name}</TableCell>
-          //     <TableCell>{executive.title}</TableCell>
-          //     <TableCell>{executive.dates}</TableCell>
-          //     <TableCell>amenities</TableCell>
-          //     <TableCell>{executive.preferences}</TableCell>
-          // </TableRow>
         );
       })
     }
@@ -68,7 +61,6 @@ class Dashboard extends React.Component {
       </div>
     );
   }
-
 
 }
 
