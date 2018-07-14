@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -30,41 +31,49 @@ const styles = {
   },
 };
 
-function SimpleCard(props) {
-  const { classes } = props;
+//function SimpleCard(props) {
+class SimpleCard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-    <div>
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography className={classes.title} color="textSecondary">
-            Upcoming Events
-          </Typography>
-          <Typography variant="headline" component="h2">
-            Month
-          </Typography>
-            <List component="nav">
-                <ListItem button>
-                    <ListItemIcon>
-                        <HotelIcon />
-                    </ListItemIcon>
-                    <ListItemText inset primary="Event" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <HotelIcon />
-                    </ListItemIcon>
-                    <ListItemText inset primary="Event" />
-                </ListItem>
-            </List>
-        </CardContent>
-      </Card>
-    </div>
-  );
+  submit(e) {
+    console.log(e);
+    this.props.history.push('/resume');
+  };
+
+render() {
+    const { classes, eventData} = this.props;
+    console.log("SimpleCard.value=", this.props);
+      return (
+        <div>
+          <Card className={classes.card}>
+            <CardContent>
+              <Typography className={classes.title} color="textSecondary">
+                Upcoming Events
+              </Typography>
+              <Typography variant="headline" component="h2">
+                {eventData.month}
+              </Typography>
+                <List component="nav">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <HotelIcon />
+                        </ListItemIcon>
+                        <ListItemText inset primary={eventData.eventName} onClick={e => this.submit(e)} />
+                    </ListItem>
+                </List>
+            </CardContent>
+          </Card>
+        </div>
+      );
+
+}
+
 }
 
 SimpleCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleCard);
+export default withRouter( withStyles(styles)(SimpleCard) );
