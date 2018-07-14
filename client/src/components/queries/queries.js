@@ -12,7 +12,16 @@ const getExecutivesQuery = gql`
     }
   }
 `
-
+const getEventsQuery = gql`
+  {
+    events {
+      id
+      eventName
+      month
+      dates
+    }
+  }
+`
 /*const getEventsQuery = gql`
   {
     events{
@@ -51,4 +60,4 @@ const getExecutiveQuery = gql`
 `
 
 
-export{getExecutivesQuery, addExecutiveMutation, getExecutiveQuery};
+export{getExecutivesQuery, addExecutiveMutation, getExecutiveQuery,getEventsQuery};
