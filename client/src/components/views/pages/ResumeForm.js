@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import TabsWrappedLabel from '../resume/tabContainer/TabContainer';
+import TabContainerForm from '../resumeForm/tabContainerForm/TabContainerForm';
 
 const styles = theme => ({
   root: {
@@ -22,7 +22,7 @@ const styles = theme => ({
   }
 });
 
-function Resume(props) {
+function ResumeForm(props) {
   const { classes } = props;
 
   return(
@@ -31,23 +31,24 @@ function Resume(props) {
         <Grid item xs={12} sm={8}>
         <Paper className={classes.paper}>
             <Typography variant="title" color="inherit">
-                Month
-
+                <h1>
+                    Month
+                </h1>
             </Typography>
             <Typography className={classes.title} color="textSecondary">
             Meeting/Convention Resumes
             </Typography>
-            <TabsWrappedLabel />
+            <TabContainerForm />
           </Paper>
         </Grid>
       </Grid>
     </div>
   );
 
-  Resume.propTypes = {
+  ResumeForm.propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
 }
 
-export default withStyles(styles)(Resume);
+export default withStyles(styles)(ResumeForm);
