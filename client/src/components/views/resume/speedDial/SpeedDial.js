@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 //import Button from '@material-ui/core/Button';
@@ -48,6 +49,7 @@ class OpenIconSpeedDial extends React.Component {
     this.setState(state => ({
       open: !state.open,
     }));
+    this.props.history.push('/resumeForm');
   };
 
   handleOpen = () => {
@@ -102,4 +104,4 @@ OpenIconSpeedDial.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(OpenIconSpeedDial);
+export default withRouter(  withStyles(styles)(OpenIconSpeedDial));
