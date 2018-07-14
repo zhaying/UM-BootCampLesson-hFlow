@@ -21,7 +21,7 @@ const styles = theme => ({
 });
 
 function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad', 'Hi'];
+  return ['Add Info', 'Write an Overview', 'Who is Attending?', 'Key Contacts'];
 }
 
 function getStepContent(step) {
@@ -29,11 +29,11 @@ function getStepContent(step) {
     case 0:
       return 'Info';
     case 1:
-      return 'Overview';
+      return 'Meeting Overview';
     case 2:
       return 'Attendance';
     case 3:
-      return 'Attendance';
+      return 'Key Meeting Contacts';
     default:
       return 'Unknown step';
   }
