@@ -75,7 +75,6 @@ class MenuAppBar extends React.Component {
             <Typography variant="title" className={classes.flex}>
               Atriad
             </Typography>
-            <Button className={classes.color} href="/" >Prices</Button>
             <Button className={classes.color} href="/dashboard" >Dashboard</Button>
 
             {button}
