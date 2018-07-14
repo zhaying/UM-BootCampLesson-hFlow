@@ -3,6 +3,7 @@ const _ = require ('lodash');
 const Executive = require('../models/executive');
 const Event = require('../models/event');
 const Preference = require('../models/preference');
+const Resume = require('../models/resume');
 
 const {
   GraphQLObjectType,
@@ -13,6 +14,55 @@ const {
   GraphQLList,
   GraphQLNonNull
 } = graphql;
+
+const ResumeType = new GraphQLObjectType({
+  name: 'Resume',
+  fields:() =>({
+    id:{type: GraphQLID},
+    info:{type:GraphQLString},
+    organization:{type:GraphQLString},
+    event: {type:GraphQLString},
+    dates: {type:GraphQLString},
+    resumeType: {type:GraphQLString},
+    conventionServicesRepresentative: {type:GraphQLString},
+    cateringRepresentative: {type:GraphQLString},
+    salesRepresentative: {type:GraphQLString},
+    meetingOverview: {type:GraphQLString},
+    summary: {type:GraphQLString},
+    attendance: {type:GraphQLString},
+    numberOfGuests:{type:GraphQLString},
+    percentageOfSpousalAttendance: {type:GraphQLString},
+    repeatEvent: {type:GraphQLString},
+    keyMeetingContacts: {type:GraphQLString},
+    name: {type:GraphQLString},
+    title: {type:GraphQLString},
+    mobile: {type:GraphQLString},
+    email: {type:GraphQLString},
+    offSiteActivities: {type:GraphQLString},
+    dayandDate: {type:GraphQLString},
+    time: {type:GraphQLString},
+    eventNumberofPeople: {type:GraphQLString},
+    location: {type:GraphQLString},
+    transportationDeparturePoint: {type:GraphQLString},
+    shuttleSchedules: {type:GraphQLString},
+    dayandDate: {type:GraphQLString},
+    time: {type:GraphQLString},
+    numberofVehicles: {type:GraphQLString},
+    frequency: {type:GraphQLString},
+    destination: {type:GraphQLString},
+    executives: {type:GraphQLString},
+    name: {type:GraphQLString},
+    title: {type:GraphQLString},
+    dates: {type:GraphQLString},
+    amenities: {type:GraphQLString},
+    preferences: {type:GraphQLString},
+    authorizedSignatures: {type:GraphQLString},
+    authorizedSignerName: {type:GraphQLString},
+    masterAccount: {type:GraphQLString},
+    whichCharges: {type:GraphQLString}
+  })
+});
+
 
 const ExecutiveType = new GraphQLObjectType({
     name:'Executive',
@@ -60,15 +110,25 @@ const EventType = new GraphQLObjectType({
       eventName:{type:GraphQLString},
       dates:{type:GraphQLString},
       resumeType:{type:GraphQLString},
-      //executiveId: {type:GraphQLID},
+      executiveId: {type:GraphQLID},
       preferenceId: {type:GraphQLID},
-      executives: {
-        type: new GraphQLList(ExecutiveType),
-        resolve(parent, args){
-          //return _.filter(events,{executiveId:parent.id});
-          return Executive.find(executiveId);
-        }
-      }
+      executive:{
+          type:ExecutiveType,
+          resolve(parent, args){
+            console.log(parent);
+            //return _.find(authors, {id: parent.authorid});
+            return Executive.findById(parent.executiveId);
+
+          }
+          },
+    })
+      // executives: {
+      //   type: new GraphQLList(ExecutiveType),
+      //   resolve(parent, args){
+      //     //return _.filter(events,{executiveId:parent.id});
+      //     return Executive.find(executiveId);
+      //   }
+      // }
     /*  Executive:{
         type:ExecutiveType,
         resolve(parent, args){
@@ -78,7 +138,6 @@ const EventType = new GraphQLObjectType({
         }
 
       }*/
-    })
 });
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
@@ -108,6 +167,13 @@ const RootQuery = new GraphQLObjectType({
        return Event.findById(args.id);
      }
    },
+   resume:{
+     type: ResumeType,
+     args:{id:{type:GraphQLID}},
+     resolve(parent, args){
+       return Resume.findById(args.id);
+     }
+   }
    executives:{
      type:new GraphQLList(ExecutiveType),
      resolve(parent, args){
@@ -127,6 +193,12 @@ const RootQuery = new GraphQLObjectType({
      resolve(parent, args){
       // return events
       return Event.find({});
+     }
+   },
+   resumes:{
+     type: ResumeType,
+     resolve(parent, args){
+       return Resume.find({});
      }
    }
   }

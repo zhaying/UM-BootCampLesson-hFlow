@@ -6,8 +6,8 @@ const eventSchema = new Schema({
   eventName: String,
   dates: String,
   resumeType: String,
-  executiveId: String,
-  preferenceId: String
+  preferenceId: String,
+  executiveId: String
 });
 
 module.exports = mongoose.model('Event', eventSchema);
