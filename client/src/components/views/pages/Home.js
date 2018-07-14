@@ -6,18 +6,30 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import MenuAppBar from '../navbar/MenuAppBar';
+import zIndex from '@material-ui/core/styles/zIndex';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    marginTop: '500px',
+    height: '900px',
+    width: '90%'
   },
   topMargin: {
-    marginTop: '80px'
+    background: '#00D49D',
+    textAlign: 'center',
+    height: '600px',
+  },
+  color: {
+    background: '#FAFAFA',
+    textAlign: 'center',
+    height: '800px',
+    zIndex: '1000' 
   }
 });
 
@@ -27,19 +39,29 @@ function Home(props) {
   return(
     <div className={classes.root}>
     <MenuAppBar />
-      <Grid container spacing={24} className={classes.topMargin}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <h2>Orchestrate your team to move towards order and away from chaos...</h2>
-            <p className="lead">
-              See how hFlow stacks up.
-            </p>
-            <p className="lead">
-              <Button variant="contained" color="primary">FIND OUT NOW</Button>
-            </p>
-          </Paper>
+      <Grid container justify="center" spacing={0}>
+        <Grid container justify="center" spacing={0} className={classes.topMargin}>
+        text
+          <Grid item xs={12}>
+          <Typography variant="headline" component="h3">
+              This is a our body text.
+            </Typography>
+            <Grid container justify="center"  spacing={0}>
+            text
+              <Paper className={classes.paper} elevation={1}>
+                <Typography variant="headline" component="h3">
+                  This is a sheet of paper.
+                </Typography>
+                <Typography component="p">
+                  Paper can be used to build surface or other elements for your application.
+                </Typography>
+              </Paper>
+            </Grid>
+          </Grid>
         </Grid>
+        
       </Grid>
+    
     </div>
   );
 
