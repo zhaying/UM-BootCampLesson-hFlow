@@ -9,11 +9,18 @@ import ResumeForm from '../views/pages/ResumeForm';
 import DashboardPage from '../views/pages/DashboardPage';
 import FadeInTestPage from '../views/pages/FadeInTestPage';
 import NewResumePage from '../views/pages/NewResumePage';
+import {ApolloProvider} from 'react-apollo';
+import ApolloClient from 'apollo-boost';
 
+//apollo client setup
+const client = new ApolloClient({
+  uri:'http://localhost:3000/api/graphql'
+})
 
 export default function LandingPage() {
   return (
     <Router>
+      <ApolloProvider client={client}>
       <div>
         <MenuAppBar />
         <main>
@@ -30,6 +37,7 @@ export default function LandingPage() {
           </Switch>
         </main>
       </div>
+      </ApolloProvider>
     </Router>
   );
 }
