@@ -4,6 +4,8 @@ dotenv.config();
 
 //Import modules for use
 const express      = require('express'),
+      cors = require('cors'),
+      mongoose = require('mongoose'),
       graphqlHTTP  = require('express-graphql');
       path         = require('path'),
       parser       = require('body-parser'),
@@ -39,6 +41,16 @@ const User = db.Model.extend({
 
 // Instatiate express server
 const app = new express();
+
+//allow Cross Orgin Requests
+app.use(cors());
+
+//connect to mlab database
+//mongoose.connect('mongodb://jackie:test123:port/dbname', { useNewUrlParser: true })
+mongoose.connect('mongodb://jackie:test123@ds229771.mlab.com:29771/gql-hflow', { useNewUrlParser: true });
+mongoose.connection.once('open',() => {
+  console.log('Connected to database');
+});
 
 // Enable use of authentication
 const opts = {
