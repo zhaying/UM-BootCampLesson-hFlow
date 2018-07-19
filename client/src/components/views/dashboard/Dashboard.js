@@ -19,10 +19,10 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
   },
   topMargin: {
-    margin: '5px',
+    margin: '0',
   },
   cMargin: {
-    margin: '30px',
+    margin: '0',
   }
 });
 
@@ -39,7 +39,7 @@ class Dashboard extends React.Component {
         console.log(event);
         return(
           <Grid key={event.id} container className={classes.topMargin} justify="center" spacing={24}>
-              <Grid item xs={6} >
+              <Grid item xs={12} sm={8}>
                 <SimpleCard eventData={event} />
               </Grid>
           </Grid>

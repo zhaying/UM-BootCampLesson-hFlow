@@ -22,7 +22,7 @@ const styles = theme => ({
     margin: '5px',
   },
   cMargin: {
-    margin: '30px',
+    margin: '0',
   }
 });
 

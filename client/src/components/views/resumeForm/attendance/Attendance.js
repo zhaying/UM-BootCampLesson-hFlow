@@ -91,7 +91,6 @@ class Attendance extends React.Component {
                             </ListItem>
                         </List>
                         <Button variant="contained" color="primary" className={classes.button}>Submit</Button>
-                    <OpenIconSpeedDial />
                 </Grid>
             </Grid>
         </div>

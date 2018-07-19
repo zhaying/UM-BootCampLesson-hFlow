@@ -108,7 +108,6 @@ class AccountBreakdown extends React.Component {
                                 <ListItemText inset primary="Other Miscellaneous Charges" />
                             </ListItem>
                         </List>
-                    <OpenIconSpeedDial />
                 </Grid>
             </Grid>
         </div>

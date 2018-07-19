@@ -52,7 +52,6 @@ class Overview extends React.Component {
                             margin="normal"
                         />
                     <Button variant="contained" color="primary" className={classes.button} >Submit</Button>
-                    <OpenIconSpeedDial />
                 </Grid>
             </Grid>
         </div>

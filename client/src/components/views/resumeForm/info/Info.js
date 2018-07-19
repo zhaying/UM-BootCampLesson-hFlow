@@ -262,7 +262,6 @@ class Info extends React.Component {
                         </TableBody>
                     </Table>
                     <Button variant="contained" color="primary" className={classes.button} >Submit</Button>
-                    <OpenIconSpeedDial />
                 </Grid>
             </Grid>
         </div>
