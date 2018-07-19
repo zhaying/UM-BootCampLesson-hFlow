@@ -30,10 +30,8 @@ function ResumeForm(props) {
       <Grid container spacing={24} className={classes.topMargin}>
         <Grid item xs={12} sm={8}>
         <Paper className={classes.paper}>
-            <Typography variant="title" color="inherit">
-                <h1>
+            <Typography variant="display3" color="inherit">
                     Month
-                </h1>
             </Typography>
             <Typography className={classes.title} color="textSecondary">
             Meeting/Convention Resumes

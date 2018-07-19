@@ -26,15 +26,14 @@ const styles = theme => ({
 function NewResumePage(props) {
   const { classes } = props;
 
+
   return(
     <div className={classes.root}>
       <Grid container spacing={24} className={classes.topMargin}>
         <Grid item xs={12} sm={8}>
         <Paper className={classes.paper}>
-            <Typography variant="title" color="inherit">
-                <h1>
+            <Typography variant="display2" color="inherit">
                     Month
-                </h1>
             </Typography>
             <Typography className={classes.title} color="textSecondary">
             Meeting/Convention Resumes
@@ -50,7 +49,7 @@ function NewResumePage(props) {
 
 }
 
-NewResume.propTypes = {
+NewResumePage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
